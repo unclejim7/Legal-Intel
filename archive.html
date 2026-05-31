@@ -6,171 +6,222 @@
 <title>Legal Intel — Archive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0e0e0e;
-    --bg: #0f0e0c;
-    --surface: #1a1814;
-    --border: #2e2a22;
-    --text: #c8bfa8;
-    --muted: #6b6255;
-    --accent: #c0392b;
-    --gold: #b5892a;
-    --paper: #f5f0e8;
+    --bg: #0f0d09;
+    --bg2: #1a1610;
+    --bg3: #231f17;
+    --paper: #f0e8d8;
+    --paper2: #d8cdb8;
+    --ink: #1a1208;
+    --gold: #c8a86a;
+    --gold2: #a88848;
+    --accent: #8b1a1a;
+    --rule: #3a3228;
+    --rule2: #4a4234;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 15px; }
   body {
     background: var(--bg);
-    color: var(--text);
-    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--paper);
+    font-family: 'Barlow Condensed', sans-serif;
     min-height: 100vh;
   }
-  .top-nav {
-    background: #080807;
-    border-bottom: 1px solid var(--border);
-    padding: 10px 28px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    color: var(--muted);
+
+  /* TOP NAV */
+  .archive-nav {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--rule2);
+    padding: 0.7rem 2.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
-  .top-nav a { color: var(--gold); text-decoration: none; }
-  .top-nav a:hover { color: var(--paper); }
+  .archive-nav a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .archive-nav a:hover { color: #fff; }
+  .archive-nav .nav-center {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--paper);
+    text-transform: none;
+  }
 
+  /* HEADER */
   .archive-header {
     text-align: center;
-    padding: 48px 24px 32px;
-    border-bottom: 1px solid var(--border);
+    padding: 4rem 2rem 2.5rem;
+    border-bottom: 1px solid var(--rule2);
+    background: var(--bg);
   }
-  .archive-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 56px;
-    font-weight: 900;
-    color: var(--paper);
-    letter-spacing: -1px;
-  }
-  .archive-header p {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
+  .archive-over {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 8px;
+    color: var(--gold2);
+    margin-bottom: 0.8rem;
+  }
+  .archive-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--paper);
+    margin-bottom: 0.7rem;
+    letter-spacing: -0.02em;
+  }
+  .archive-tagline {
+    font-size: 0.85rem;
+    color: var(--paper2);
+    letter-spacing: 0.08em;
+    font-style: italic;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+  }
+  .archive-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    background: var(--bg3);
+    border: 1px solid var(--rule2);
+    padding: 0.5rem 1.2rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
   }
 
+  /* WRAPPER */
   .wrapper {
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 32px 24px 64px;
+    padding: 3rem 2rem 5rem;
   }
 
+  /* MONTH GROUP */
   .month-group {
-    margin-bottom: 40px;
+    margin-bottom: 3rem;
   }
   .month-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.22em;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: var(--muted);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 8px;
-    margin-bottom: 14px;
+    color: var(--gold2);
+    border-bottom: 1px solid var(--rule2);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.2rem;
   }
 
+  /* EDITION CARD */
   .edition-card {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 16px 20px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    margin-bottom: 10px;
+    gap: 1.5rem;
+    padding: 1.1rem 1.4rem;
+    margin-bottom: 0.7rem;
+    background: var(--bg2);
+    border: 1px solid var(--rule2);
     text-decoration: none;
+    color: inherit;
     transition: border-color 0.15s, background 0.15s;
   }
   .edition-card:hover {
-    border-color: var(--gold);
-    background: #211e18;
+    border-color: var(--gold2);
+    background: var(--bg3);
   }
-
   .date-block {
-    min-width: 120px;
+    min-width: 110px;
   }
   .day-of-week {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 2px;
+    color: var(--gold2);
+    margin-bottom: 0.15rem;
   }
   .full-date {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.15rem;
     font-weight: 700;
     color: var(--paper);
+    line-height: 1.1;
   }
-
   .badges {
     flex: 1;
     display: flex;
-    gap: 8px;
     flex-wrap: wrap;
+    gap: 0.4rem;
     align-items: center;
   }
   .badge-latest {
     background: var(--accent);
     color: #fff;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.14em;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    padding: 3px 8px;
-    font-weight: 500;
+    padding: 0.15rem 0.5rem;
   }
   .badge-vol {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-  }
-
-  .read-btn {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
+    background: var(--bg3);
+    border: 1px solid var(--rule2);
+    color: var(--paper2);
+    font-size: 0.6rem;
+    font-weight: 600;
     letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+  }
+  .read-btn {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--gold);
     white-space: nowrap;
   }
 
+  /* FOOTER */
   .archive-footer {
     text-align: center;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    padding: 24px;
-    border-top: 1px solid var(--border);
-    margin-top: 32px;
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--rule2);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rule2);
+    color: #5a5040;
   }
 </style>
 </head>
 <body>
 
-<nav class="top-nav">
-  <div><a href="index.html">← Today's Edition</a></div>
-  <div>Legal Intel · All Editions</div>
-  <div>Est. 2025</div>
+<nav class="archive-nav">
+  <span>← <a href="index.html">Today's Edition</a></span>
+  <span class="nav-center">Legal Intel</span>
+  <span style="color:var(--paper2);">AI × WC & Personal Injury Law</span>
 </nav>
 
 <div class="archive-header">
-  <h1>All Editions</h1>
-  <p>AI × Workers' Compensation &amp; Personal Injury Law · Est. 2025</p>
+  <div class="archive-over">Complete Edition Archive</div>
+  <div class="archive-title">Legal Intel</div>
+  <div class="archive-tagline">"All the Intelligence That's Fit to Argue."</div>
+  <div class="archive-stat">📰 4 Editions Published &nbsp;·&nbsp; Vol. I, Est. May 2026</div>
 </div>
 
 <div class="wrapper">
@@ -179,13 +230,24 @@
   <div class="month-group">
     <div class="month-label">May 2026</div>
 
+    <a href="2026-05-31.html" class="edition-card">
+      <div class="date-block">
+        <div class="day-of-week">Sunday</div>
+        <div class="full-date">May 31, 2026</div>
+      </div>
+      <div class="badges">
+        <span class="badge-latest">Latest</span>
+        <span class="badge-vol">Vol. I, No. 4</span>
+      </div>
+      <span class="read-btn">Read →</span>
+    </a>
+
     <a href="2026-05-30.html" class="edition-card">
       <div class="date-block">
         <div class="day-of-week">Saturday</div>
         <div class="full-date">May 30, 2026</div>
       </div>
       <div class="badges">
-        <span class="badge-latest">Latest</span>
         <span class="badge-vol">Vol. I, No. 3</span>
       </div>
       <span class="read-btn">Read →</span>
@@ -215,7 +277,7 @@
 
   </div>
 
-</div><!-- end wrapper -->
+</div>
 
 <div class="archive-footer">
   Legal Intel &nbsp;·&nbsp; All editions AI-generated &nbsp;·&nbsp; Not legal advice &nbsp;·&nbsp; unclejim7.github.io/legal-intel
