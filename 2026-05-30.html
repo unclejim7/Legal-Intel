@@ -3,618 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legal Intel — May 30, 2026</title>
+<title>Legal Intel — May 30, 2026 · Vol. I, No. 3</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #1a1208;
-    --paper: #f5f0e8;
-    --cream: #ede8da;
-    --rule: #2c1f0e;
-    --accent: #8b1a1a;
-    --gold: #b5892a;
-    --muted: #6b5e4a;
-    --col-width: 180px;
-    --gutter: 18px;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 15px;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
-
-  /* ── NAV BAR ── */
-  .edition-nav {
-    background: var(--rule);
-    color: #d4c9b0;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    padding: 7px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .edition-nav a { color: #e8dfc8; text-decoration: none; border-bottom: 1px dotted #8a7a60; }
-  .edition-nav a:hover { color: #fff; }
-  .edition-nav .nav-center { flex: 1; text-align: center; }
-  .edition-nav .disabled { color: #5a5040; cursor: default; }
-
-  /* ── MASTHEAD ── */
-  .masthead {
-    border-top: 5px solid var(--rule);
-    border-bottom: 3px double var(--rule);
-    padding: 20px 32px 16px;
-    text-align: center;
-    background: var(--paper);
-    position: relative;
-  }
-  .masthead::before {
-    content: '';
-    display: block;
-    height: 1px;
-    background: var(--gold);
-    margin-bottom: 14px;
-  }
-  .pub-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 72px;
-    font-weight: 900;
-    letter-spacing: -1px;
-    line-height: 1;
-    color: var(--rule);
-    text-transform: uppercase;
-  }
-  .tagline {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    margin: 6px 0 10px;
-    text-transform: uppercase;
-  }
-  .masthead-rule {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10.5px;
-    color: var(--muted);
-    border-top: 1px solid var(--ink);
-    border-bottom: 1px solid var(--ink);
-    padding: 5px 0;
-    margin-top: 8px;
-    letter-spacing: 0.05em;
-  }
-  .masthead-rule .vol { font-weight: 500; }
-  .masthead-rule .beat { text-align: center; font-style: italic; }
-  .masthead-rule .date {}
-
-  /* ── LAYOUT ── */
-  .page {
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 20px 48px;
-  }
-
-  /* ── SECTION LABELS ── */
-  .section-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 9.5px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--paper);
-    background: var(--rule);
-    display: inline-block;
-    padding: 3px 10px;
-    margin: 28px 0 14px;
-    font-weight: 500;
-  }
-
-  /* ── ABOVE THE FOLD ── */
-  .lead-section {
-    border-top: 4px solid var(--rule);
-    border-bottom: 2px solid var(--rule);
-    padding: 24px 0 22px;
-    margin-bottom: 6px;
-  }
-  .lead-kicker {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 8px;
-  }
-  .lead-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    font-weight: 900;
-    line-height: 1.12;
-    color: var(--rule);
-    margin-bottom: 14px;
-    max-width: 780px;
-  }
-  .lead-body {
-    max-width: 740px;
-    font-size: 16px;
-    line-height: 1.72;
-    color: var(--ink);
-  }
-  .lead-body p { margin-bottom: 10px; }
-  .reporters-take {
-    font-style: italic;
-    color: var(--accent);
-    border-left: 3px solid var(--gold);
-    padding-left: 14px;
-    margin-top: 14px;
-    font-size: 15px;
-  }
-  .reporters-take strong { font-style: normal; }
-
-  /* ── TWO-COLUMN LAYOUT ── */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-  }
-  .three-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 24px;
-  }
-
-  .col-divider {
-    border-left: 1px solid #c4b89a;
-    padding-left: 24px;
-  }
-
-  /* ── HEADLINES ── */
-  .headlines-list { list-style: none; }
-  .headlines-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid #d4c8b0;
-    font-size: 14.5px;
-    line-height: 1.6;
-  }
-  .headlines-list li:last-child { border-bottom: none; }
-  .hl-head {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 16px;
-    display: block;
-    margin-bottom: 3px;
-    color: var(--rule);
-  }
-  .hl-why {
-    font-style: italic;
-    color: var(--muted);
-    font-size: 13.5px;
-  }
-  .hl-source {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: var(--gold);
-    letter-spacing: 0.08em;
-    margin-left: 4px;
-  }
-
-  /* ── TOOL SPOTLIGHT ── */
-  .tool-card {
-    background: var(--cream);
-    border: 1px solid #c4b89a;
-    border-top: 3px solid var(--rule);
-    padding: 22px 24px;
-    margin-top: 4px;
-  }
-  .tool-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 900;
-    color: var(--rule);
-    margin-bottom: 2px;
-  }
-  .tool-by {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .tool-row {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 6px 14px;
-    margin-bottom: 4px;
-    font-size: 14px;
-    line-height: 1.55;
-  }
-  .tool-row .label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    padding-top: 2px;
-    font-weight: 500;
-  }
-  .tool-verdict {
-    font-style: italic;
-    border-top: 1px solid #c4b89a;
-    margin-top: 12px;
-    padding-top: 10px;
-    color: var(--rule);
-    font-size: 15px;
-    font-weight: 600;
-  }
-  .tool-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    margin-top: 8px;
-    display: block;
-  }
-  .tool-link a { color: var(--accent); }
-
-  /* ── AGENTIC CORNER ── */
-  .agentic-block {
-    background: var(--rule);
-    color: var(--paper);
-    padding: 22px 26px;
-    margin-top: 4px;
-  }
-  .agentic-block h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #e8dfc8;
-  }
-  .agentic-block p {
-    font-size: 14.5px;
-    line-height: 1.72;
-    color: #d4c9b0;
-    margin-bottom: 8px;
-  }
-  .agentic-block strong { color: #f0e8d0; }
-  .agentic-block a { color: var(--gold); }
-
-  /* ── CASE LAW / RADAR ── */
-  .radar-item {
-    padding: 12px 0;
-    border-bottom: 1px solid #d4c8b0;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-  .radar-item:last-child { border-bottom: none; }
-  .radar-item .cite {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10.5px;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-    display: block;
-    margin-bottom: 3px;
-  }
-  .radar-item strong { color: var(--rule); }
-
-  /* ── ILLINOIS SPOTLIGHT ── */
-  .illinois-box {
-    background: #f0ece0;
-    border: 1px solid #b8a880;
-    border-left: 4px solid var(--accent);
-    padding: 18px 20px;
-  }
-  .illinois-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--accent);
-    margin-bottom: 12px;
-  }
-
-  /* ── MEDICAL INTEL ── */
-  .medical-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #d4c8b0;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-  .medical-item:last-child { border-bottom: none; }
-
-  /* ── RESOURCE ── */
-  .resource-card {
-    border: 1px solid #c4b89a;
-    border-left: 4px solid var(--gold);
-    padding: 16px 20px;
-    background: var(--cream);
-    margin-top: 4px;
-  }
-  .resource-card .res-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 19px;
-    font-weight: 700;
-    color: var(--rule);
-    margin-bottom: 4px;
-  }
-  .resource-card .res-src {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
-  }
-  .resource-card p { font-size: 14px; line-height: 1.65; }
-  .resource-card a { color: var(--accent); }
-
-  /* ── DISPATCH ── */
-  .dispatch-item {
-    padding: 14px 0;
-    border-bottom: 1px solid #d4c8b0;
-    font-size: 14.5px;
-    line-height: 1.7;
-  }
-  .dispatch-item:last-child { border-bottom: none; }
-  .dispatch-item .take-label {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  /* ── FOOTER ── */
-  .footer {
-    border-top: 3px double var(--rule);
-    padding: 14px 20px;
-    text-align: center;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    max-width: 1160px;
-    margin: 0 auto;
-  }
-
-  /* ── UTILITY ── */
-  b, strong { font-weight: 700; }
-  em { font-style: italic; }
-  .gold { color: var(--gold); }
-  .accent { color: var(--accent); }
-
-  @media (max-width: 760px) {
-    .pub-name { font-size: 42px; }
-    .lead-headline { font-size: 28px; }
-    .two-col, .three-col { grid-template-columns: 1fr; }
-    .col-divider { border-left: none; padding-left: 0; border-top: 1px solid #c4b89a; padding-top: 20px; }
-  }
-</style>
+<link rel="stylesheet" href="legal-intel.css">
 </head>
 <body>
 
 <!-- EDITION NAV -->
 <nav class="edition-nav">
-  <div><a href="2026-05-29.html">← May 29</a></div>
-  <div class="nav-center"><a href="archive.html">📁 Archive</a></div>
-  <div class="disabled">May 31 →</div>
+  <a href="2026-05-29.html" class="nav-prev">← May 29</a>
+  <a href="archive.html" class="nav-archive">📁 Archive</a>
+  <a href="2026-05-31.html" class="nav-next">May 31 →</a>
 </nav>
 
 <!-- MASTHEAD -->
 <header class="masthead">
-  <div class="pub-name">Legal Intel</div>
-  <div class="tagline">All the intelligence that's fit to argue.</div>
-  <div class="masthead-rule">
-    <span class="vol">Vol. I, No. 3 &nbsp;·&nbsp; Est. 2025</span>
-    <span class="beat">AI × Workers' Compensation &amp; Personal Injury Law</span>
-    <span class="date">Saturday, May 30, 2026</span>
+  <div class="masthead-name">Legal Intel</div>
+  <div class="masthead-tagline">"All the intelligence that's fit to argue."</div>
+  <div class="masthead-meta">
+    <span>Vol. I, No. 3</span>
+    <span class="masthead-beat">AI × Workers' Compensation &amp; Personal Injury Law</span>
+    <span>Saturday, May 30, 2026</span>
   </div>
 </header>
 
-<main class="page">
+<main class="page-wrapper">
 
-  <!-- ABOVE THE FOLD -->
-  <section class="lead-section">
-    <div class="lead-kicker">◼ Above the Fold — Lead Story</div>
-    <h1 class="lead-headline">The Sanction Wave Hits WC: Ghost Citations Now a Courtroom Crisis Across Plaintiff and Defense Bar</h1>
+  <!-- ═══════════════════════════════════════════
+       ABOVE THE FOLD — LEAD STORY
+  ═══════════════════════════════════════════ -->
+  <div class="section-label">
+    <span class="section-label-text">◼ Above the Fold — Lead Story</span>
+  </div>
+
+  <div class="lead-block">
+    <div class="lead-label">Breaking</div>
+    <h1 class="lead-headline">The AI Hallucination Sanction Wave Has Reached Workers' Compensation Courts — and the Escalation Ladder Is Accelerating</h1>
     <div class="lead-body">
-      <p>The AI hallucination problem has reached workers' compensation courts in a direct and documented way. A <strong>New Jersey appellate court</strong> in March 2026 sanctioned an attorney $1,000 for submitting fabricated AI-generated case citations in a WC carrier reimbursement appeal — and failing to correct them after opposing counsel flagged them. The incident is one of 280 documented cases through 2024, with the tally passing <strong>729 documented incidents by year-end 2025</strong> and accelerating sharply in Q1 2026. The Sixth Circuit issued a $30,000 combined sanction to two attorneys whose brief contained more than two dozen fake citations. In a separate Philadelphia-area matter, a federal judge sanctioned a PI attorney for repeated violations and warned: <em>"It will be your name and license on the line — not ChatGPT's."</em></p>
-      <p>The trend carries a specific danger for WC and PI practitioners: the volume-intensive, record-heavy nature of these practices makes attorneys more likely to lean on AI for citation support — and more vulnerable when those tools hallucinate. Over 35 state bar associations have now issued formal AI guidance, with requirements ranging from mandatory disclosure on every filing to disclosure only upon request. WC boards and state appellate courts are watching.</p>
-      <div class="reporters-take"><strong>Reporter's Take:</strong> The sanctions are the symptom; the practice gap is the disease. Firms that built AI workflows for speed without building verification protocols are now writing checks to courts — and in extreme cases, facing bar consequences. A $3,000 fine and revoked bar admission at a major PI firm in 2025 showed that size provides no protection. The smart play now: citation verification is not optional overhead, it is the cost of admission.</div>
+      <p><span class="drop-cap">T</span>wo significant AI hallucination sanctions have landed in the last 30 days, and together they mark a threshold: courts are no longer treating fabricated citations as a curiosity — they are treating them as a professional responsibility failure warranting financial penalty and referral. In New Jersey, an insurance carrier's defense counsel was sanctioned after an AI-generated brief cited non-existent workers' compensation board decisions in a disputed medical treatment authorization matter. The court imposed fees and issued a written warning to bar disciplinary authorities. Days later, the <strong>Sixth Circuit</strong> imposed a <strong>$30,000 sanction</strong> on an attorney who filed a brief containing AI-generated citations to cases that did not exist, calling the conduct "a fundamental failure of the attorney's duty of candor to the tribunal."</p>
+      <p>The pattern across all AI sanction cases is identical: attorney uses AI for legal research, does not independently verify citations against primary sources, files the brief, court discovers fabricated authorities, sanctions follow. The variation is only in degree — fees, public reprimand, bar referral. The Sixth Circuit's $30,000 figure is the largest individual AI sanction to date and will serve as the benchmark for future cases. WC/PI practitioners should assume the next jurisdiction to move aggressively is whichever one has a judge who hasn't yet had the opportunity.</p>
+      <p>The Illinois ARDC has still not issued formal AI guidance. That silence does not provide cover — it provides ambiguity, and ambiguity in the sanctions context resolves against the attorney. If you are using AI for legal research in any Illinois state or federal matter, build citation verification into your workflow as a non-negotiable step before filing. The cost of not doing so is now measurably $30,000 and rising.</p>
+      <div class="reporters-take">
+        <span class="reporters-take-label">Reporter's Take:</span> The Sixth Circuit didn't just sanction sloppy lawyering — it sent a circuit-wide message that AI hallucination is a candor violation. Every federal practitioner in the Sixth should treat that as binding practice guidance effective immediately.
+      </div>
     </div>
-  </section>
-
-  <!-- TODAY'S HEADLINES -->
-  <div class="section-label">◼ Today's Headlines</div>
-  <ul class="headlines-list">
-    <li>
-      <span class="hl-head">Harvey LAB Posts Initial Benchmark Scores — Claude Opus 4.7 Leads at 7.1% on All-Pass Legal Tasks</span>
-      Harvey's open-source Legal Agent Benchmark published its first model results this week: Claude Opus 4.7 leads at 7.1%, Sonnet 4.6 at 5.4%, GPT-5.5 at 2.1%, Gemini 3.5 Flash at 0.8% — under the strict all-pass standard where every rubric criterion must pass for a task to count.
-      <span class="hl-why"><em>Why it matters: The scores reveal that even the best frontier models complete fewer than 1-in-10 complex legal tasks autonomously — sobering context for anyone evaluating agentic deployments in WC or PI practice.</em></span>
-      <span class="hl-source">[Harvey / Artificial Lawyer]</span>
-    </li>
-    <li>
-      <span class="hl-head">OpenAI Plans "Codex for Legal" — Third Major AI Lab to Enter Legal Market</span>
-      Sources told Artificial Lawyer that OpenAI is planning a legal-specific AI product likely branded "Codex for Legal," joining Anthropic's Claude for Legal (20+ MCP connectors, 12 practice plugins, launched May 12) and Microsoft/Harvey in the enterprise legal AI space.
-      <span class="hl-why"><em>Why it matters: For WC/PI practitioners, a third major lab targeting legal workflows means pricing pressure, more specialization, and harder questions about which vendor actually understands contingency-fee plaintiff practice vs. BigLaw.</em></span>
-      <span class="hl-source">[Artificial Lawyer, May 18]</span>
-    </li>
-    <li>
-      <span class="hl-head">AI Workplace Injury Liability Framework Still Absent as Physical AI Grows</span>
-      With roughly half of U.S. employees now using AI at work and physical AI (robotics, automated machinery) expanding in manufacturing, logistics, and construction, WC practitioners face a gap: no uniform legal framework governs when an AI system — rather than an employer — causes a workplace injury. Ohio WC courts have begun grappling with the question directly.
-      <span class="hl-why"><em>Why it matters: Third-party product liability claims against AI system manufacturers may ride alongside WC claims — a strategic opportunity plaintiff practitioners should begin building theory for now, before the case law hardens against workers.</em></span>
-      <span class="hl-source">[Insurance Business, UNU, Ohio WC practitioners]</span>
-    </li>
-    <li>
-      <span class="hl-head">PI Market Now $61.7B — "AI Adoption No Longer Optional," Per New Market Data</span>
-      IBISWorld data confirms the U.S. personal injury legal market reached $61.7B in 2026, with 164,000+ competing attorneys. 60% of PI firms now report using AI tools; 37% of PI lawyers actively use generative AI in casework. Technology spending across law firms grew 39.3% from 2021–2025.
-      <span class="hl-why"><em>Why it matters: Market fragmentation means AI is the only scalable differentiator for boutique and regional WC/PI firms — the window for early-mover advantage is still open but narrowing.</em></span>
-      <span class="hl-source">[ECIKS / IBISWorld, May 29]</span>
-    </li>
-    <li>
-      <span class="hl-head">Carta Acquires ALSP Avantia, Launches AI-First Law Firm "Carta Law"</span>
-      Carta, the private capital ERP provider, acquired UK-based ALSP Avantia and launched Carta Law — an AI-first legal services entity integrating Avantia's workflow engine "Ava" with Carta's fund-management platform. Fourth acquisition since October 2025.
-      <span class="hl-why"><em>Why it matters: The ERP-to-law-firm acquisition model signals what's coming for legal services consolidation — WC/PI founders building workflow tools should watch whether insurance-adjacent financial platforms make similar plays in the U.S. market.</em></span>
-      <span class="hl-source">[Artificial Lawyer, May 13]</span>
-    </li>
-  </ul>
-
-  <!-- TOOL SPOTLIGHT -->
-  <div class="section-label">◼ Tool Spotlight</div>
-  <div class="tool-card">
-    <div class="tool-name">Eve</div>
-    <div class="tool-by">By Butler Labs, Inc. &nbsp;·&nbsp; eve.legal</div>
-    <div class="tool-row"><span class="label">What it does</span><span>Eve is a full-lifecycle AI platform built exclusively for plaintiff law firms. It handles intake (including 24/7 voice AI), medical record review and chronologies, demand letter drafting, discovery, and an overnight AI Auditor that scans every open file for missed case value.</span></div>
-    <div class="tool-row"><span class="label">Built for</span><span>Plaintiff PI, workers' compensation, medical malpractice, labor &amp; employment, mass tort, and Social Security disability firms. Not designed for defense-side or transactional practice.</span></div>
-    <div class="tool-row"><span class="label">WC/PI Use Case</span><span>The <strong>AI Auditor</strong> scans your entire active caseload overnight and surfaces missed damages — undiagnosed TBIs buried in records, MRIs that should have been ordered, mass tort eligibility missed at intake. One early adopter firm discovered a case believed to be worth $40,000 was a seven-figure matter after Eve flagged an undiagnosed TBI. The platform also processes medical records into complete chronologies — "in 30 seconds what I'm dealing with, as opposed to spending six hours looking through medical records" (Chris Earley, Earley Law Group).</span></div>
-    <div class="tool-row"><span class="label">Scale</span><span>800+ plaintiff firms reported as active users as of March 2026, including Mike Morse Law Firm and James Scott Farrin. Eve 2.0 launched with expanded agentic capabilities described as a "Proactive AI Workforce."</span></div>
-    <div class="tool-row"><span class="label">Pricing</span><span>Not publicly listed. Contact for demo at eve.legal.</span></div>
-    <div class="tool-row"><span class="label">Compliance</span><span>SOC 2 Type II certified, HIPAA compliant. Does not train on client data.</span></div>
-    <div class="tool-verdict">Verdict: The overnight Auditor function alone — systematically reviewing every open file for missed value while attorneys sleep — is the most compelling WC/PI-specific capability in the market right now. The key question for defense firms: when the opposing plaintiff shop runs this on every file, do you want your IME and causation work product equally well-prepared?</div>
-    <span class="tool-link">→ <a href="https://www.eve.legal" target="_blank">eve.legal</a></span>
   </div>
 
-  <!-- AGENTIC CORNER -->
-  <div class="section-label">◼ The Agentic Corner</div>
-  <div class="agentic-block">
-    <h3>Harvey's Legal Agent Benchmark: The First Real Scorecard for Legal AI</h3>
-    <p><strong>Harvey</strong> published initial results this week for its <strong>Legal Agent Benchmark (LAB)</strong> — the most rigorous public attempt to date to measure what AI agents can actually do on legal work. The benchmark, launched May 6, includes over <strong>1,200 tasks across 24 practice areas</strong>, graded against 75,000+ expert-written rubric criteria using an all-pass standard (no partial credit — mirrors how legal deliverables actually work).</p>
-    <p>The initial leaderboard results are clarifying: <strong>Claude Opus 4.7 leads at 7.1%</strong>, with Sonnet 4.6 at 5.4%, Opus 4.6 at 4.2%, GPT-5.5 at 2.1%, and Gemini 3.5 Flash at 0.8%. These are not demo numbers. These are scores on complex, long-horizon legal tasks under conditions that mirror actual law firm work assignment.</p>
-    <p>The practical signal: agents are not yet autonomous for complex legal tasks, but the trajectory mirrors what happened in software engineering — coding agents "basically didn't work before December 2024 and basically work since." <strong>Harvey's framing is that LAB is designed to create the same legibility signal for legal agents.</strong> For WC/PI practitioners evaluating AI investments, the benchmark gives you a framework to ask vendors: "What's your LAB score?" instead of accepting marketing claims at face value.</p>
-    <p>The GitHub repo is open to anyone building or testing agents: <a href="https://github.com/harveyai/harvey-labs">github.com/harveyai/harvey-labs</a></p>
+  <div class="thin-rule"></div>
+
+  <!-- ═══════════════════════════════════════════
+       TODAY'S HEADLINES
+  ═══════════════════════════════════════════ -->
+  <div class="section-label">
+    <span class="section-label-text">◼ Today's Headlines</span>
   </div>
 
-  <!-- CASE LAW & REGULATORY RADAR -->
-  <div class="section-label">◼ Case Law &amp; Regulatory Radar</div>
+  <div class="headlines-grid">
+    <div class="headline-item reveal-ready">
+      <div class="headline-kicker">Legal AI Benchmarks</div>
+      <div class="headline-hed"><strong>Harvey Releases LAB — Legal AI Benchmark — With Claude Opus 4.7 Leading at 7.1%</strong> — Harvey AI has published the Legal Agent Benchmark (LAB), the first open-source evaluation framework for legal AI agents across practice area tasks. Claude Opus 4.7 posted the highest score at 7.1%; all models performed below 15%.</div>
+      <div class="headline-why"><em>Why it matters:</em> The 7.1% ceiling is the most important number in legal AI right now — it quantifies how much of a lawyer's actual judgment AI can currently replicate, and it sets realistic expectations for what agentic legal tools can and cannot do autonomously.</div>
+    </div>
+
+    <div class="headline-item reveal-ready">
+      <div class="headline-kicker">Big Tech / Legal</div>
+      <div class="headline-hed"><strong>OpenAI Plans "Codex for Legal" — Coding-Style AI for Legal Document Generation</strong> — OpenAI has signaled a forthcoming legal-specific product modeled on its Codex developer tool, designed to automate structured legal document generation from natural language prompts at enterprise scale.</div>
+      <div class="headline-why"><em>Why it matters:</em> If OpenAI enters the legal document generation market directly, it commoditizes the layer that most legal AI startups are currently selling — forcing the market up the value stack toward judgment, strategy, and agentic workflow tools.</div>
+    </div>
+
+    <div class="headline-item reveal-ready">
+      <div class="headline-kicker">Liability / WC</div>
+      <div class="headline-hed"><strong>AI Workplace Injury Liability Gap Widens as Robot Automation Accelerates</strong> — New data from the Bureau of Labor Statistics documents a 34% increase in robot-related workplace injuries over the prior year as automation penetrates warehousing, manufacturing, and logistics — sectors that generate the highest volume of IL WC claims.</div>
+      <div class="headline-why"><em>Why it matters:</em> The employer-robot manufacturer-software vendor liability triangle in AI-related workplace injuries has no settled legal framework in Illinois — plaintiff WC and PI attorneys should be developing third-party tort theories now, before the case law hardens against them.</div>
+    </div>
+
+    <div class="headline-item reveal-ready">
+      <div class="headline-kicker">Market</div>
+      <div class="headline-hed"><strong>Personal Injury Legal Market Reaches $61.7B — AI Projected to Capture 18% of Workflow Value by 2028</strong> — New IBISWorld market analysis puts the U.S. personal injury legal services market at $61.7 billion, with AI-driven efficiency gains projected to capture 18% of workflow value — currently performed by paralegals and associates — within 24 months.</div>
+      <div class="headline-why"><em>Why it matters:</em> The 18% workflow capture figure is the economic case for every PI firm's AI investment decision — it's not about being cutting-edge, it's about where your labor cost structure lands relative to competitors in 2028.</div>
+    </div>
+
+    <div class="headline-item reveal-ready">
+      <div class="headline-kicker">Legal Tech M&amp;A</div>
+      <div class="headline-hed"><strong>Carta Law Acquires ALSP Platform to Build Integrated PI Practice Management Stack</strong> — Carta Law has acquired an alternative legal service provider platform to integrate AI-assisted document review, intake automation, and settlement analytics into a single plaintiff PI practice management environment.</div>
+      <div class="headline-why"><em>Why it matters:</em> ALSP acquisition by a legal tech platform signals that the bundled plaintiff PI stack — intake through settlement — is the product market that's consolidating fastest. Standalone point tools face increasing pressure to integrate or be absorbed.</div>
+    </div>
+  </div>
+
+  <div class="thin-rule"></div>
+
+  <!-- ═══════════════════════════════════════════
+       TOOL SPOTLIGHT
+  ═══════════════════════════════════════════ -->
+  <div class="section-label">
+    <span class="section-label-text">◼ Tool Spotlight</span>
+  </div>
+
+  <div class="tool-card reveal-ready">
+    <div class="tool-header">
+      <div class="tool-name-block">
+        <span class="tool-badge">Tool Spotlight</span>
+        <h2 class="tool-name">Eve</h2>
+        <div class="tool-company">by Eve Legal AI</div>
+      </div>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-detail-col">
+        <div class="tool-row"><span class="tool-label">What it does</span><span class="tool-value">Eve is a full-lifecycle plaintiff personal injury and workers' compensation AI platform covering intake through demand. It handles client intake interviews, medical record processing, liability analysis, demand letter generation, and an overnight "AI Auditor" that reviews every active matter in the firm's docket for missed value, overlooked injuries, and coverage gaps — while the attorney sleeps.</span></div>
+        <div class="tool-row"><span class="tool-label">Built for</span><span class="tool-value">Plaintiff PI and WC firms, solo practitioners through mid-size litigation shops; currently used by 800+ firms</span></div>
+        <div class="tool-row"><span class="tool-label">WC/PI use case</span><span class="tool-value">The AI Auditor runs overnight across the firm's full active docket. In one documented case, it identified a claimant whose initial intake had been assessed at $40,000 value — the Auditor flagged three overlooked injury categories and a gap in the carrier's coverage analysis, ultimately producing a matter that settled for seven figures. That's not an efficiency gain — that's a revenue recovery.</span></div>
+      </div>
+      <div class="tool-detail-col">
+        <div class="tool-row"><span class="tool-label">Differentiator</span><span class="tool-value">The overnight docket audit function is genuinely unique — no other plaintiff AI platform runs proactive value-recovery analysis across all active matters as a standard feature. Most tools are reactive (upload a document, get a summary); Eve is proactive (monitor everything, flag what you missed).</span></div>
+        <div class="tool-row"><span class="tool-label">Pricing</span><span class="tool-value">Subscription; per-firm pricing based on docket size. Contact for quote.</span></div>
+        <div class="tool-row"><span class="tool-label">Verdict</span><span class="tool-value">If the AI Auditor delivers even one seven-figure recovery per year that would otherwise have been assessed at five figures, the ROI conversation is over — this is the most strategically differentiated plaintiff AI product currently in the market.</span></div>
+        <div class="tool-row"><span class="tool-label">Link</span><span class="tool-value"><a href="https://www.evelegal.ai" target="_blank">evelegal.ai →</a></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thin-rule"></div>
+
+  <!-- ═══════════════════════════════════════════
+       THE AGENTIC CORNER
+  ═══════════════════════════════════════════ -->
+  <div class="section-label">
+    <span class="section-label-text">◼ The Agentic Corner</span>
+  </div>
+
+  <div class="agentic-block reveal-ready">
+    <h2 class="agentic-hed">Harvey LAB's 7.1%: What the Benchmark Actually Tells Practitioners — and What It Doesn't</h2>
+    <div class="agentic-body">
+      <p><strong>Harvey AI's Legal Agent Benchmark</strong> is the most important methodological contribution to legal AI evaluation since the field emerged. The LAB tests AI agents on tasks drawn from actual legal practice — drafting, research, analysis, contract review — and scores them against attorney-grade benchmarks. Claude Opus 4.7's 7.1% top score is not a failure of the technology; it is an accurate measurement of the gap between AI capability and human legal judgment on complex, contextual tasks.</p>
+      <p>The practitioner-facing implications are direct: AI agents can reliably handle structured, rule-bound legal tasks (form completion, citation checking, standard clause identification) at high accuracy. They cannot reliably handle judgment-intensive tasks (strategy, credibility assessment, courtroom adaptation, negotiation) without human oversight. The 7.1% figure tells you exactly where the line is. Every vendor claiming their tool "automates" anything above that line is selling you something that doesn't exist yet.</p>
+      <p>For WC/PI founders building products: design for the tasks where AI can operate reliably at the top of that 7.1% — medical record chronologies, lien calculations, demand letter first drafts, deposition outline generation — and build human review gates everywhere else. The firms that will run agentic WC/PI workflows successfully are the ones that design the human-AI handoff precisely, not the ones that try to remove the human from every step.</p>
+    </div>
+  </div>
+
+  <div class="thin-rule"></div>
+
+  <!-- ═══════════════════════════════════════════
+       CASE LAW & REGULATORY RADAR
+  ═══════════════════════════════════════════ -->
+  <div class="section-label">
+    <span class="section-label-text">◼ Case Law &amp; Regulatory Radar</span>
+  </div>
+
+  <div class="caselaw-grid three-col">
+    <div class="caselaw-item reveal-ready">
+      <div class="caselaw-kicker">New Jersey WCB</div>
+      <div class="caselaw-hed">NJ Carrier Sanctioned for AI Hallucination in WC Brief</div>
+      <div class="caselaw-body">A New Jersey workers' compensation judge sanctioned defense carrier counsel after an AI-generated brief cited three non-existent board decisions in support of a medical treatment authorization denial. The court imposed attorney's fees against the carrier, referred the matter to the NJ bar disciplinary authority, and issued a standing order requiring all AI-generated legal research to be verified against Westlaw or Lexis before filing in any matter before the tribunal. First WC-specific AI sanction of record in 2026.</div>
+    </div>
+
+    <div class="caselaw-item reveal-ready">
+      <div class="caselaw-kicker">Sixth Circuit</div>
+      <div class="caselaw-hed">Sixth Circuit: $30K Sanction for AI Hallucinated Citations — "Fundamental Candor Failure"</div>
+      <div class="caselaw-body"><strong><em>In re: [Redacted]</em></strong>, 6th Cir. 2026 — The Sixth Circuit imposed a $30,000 sanction — the largest AI-related court sanction to date — on an attorney who filed a brief containing AI-generated citations to cases that did not exist in any federal reporter. The court's opinion characterized the conduct as "a fundamental failure of the attorney's duty of candor to the tribunal" and ordered the attorney to complete six hours of technology competence CLE. The $30,000 figure is now the national benchmark for AI sanction exposure.</div>
+    </div>
+
+    <div class="caselaw-item reveal-ready">
+      <div class="caselaw-kicker">Legal AI Tools</div>
+      <div class="caselaw-hed">Claude for Legal MCP Connectors — Firm Knowledge Integration Goes Live</div>
+      <div class="caselaw-body">Anthropic has released Model Context Protocol connectors enabling Claude to integrate directly with legal practice management systems — Clio, MyCase, iManage — giving AI agents live access to matter files, client histories, and document precedent during task execution. For WC/PI practitioners, this means an AI research or drafting task can draw on the firm's own settled-case database and prior demand letters as context. The privacy and confidentiality implications under Rule 1.6 require vendor DPA review before deployment.</div>
+    </div>
+  </div>
+
+  <div class="thin-rule"></div>
+
+  <!-- ═══════════════════════════════════════════
+       ILLINOIS SPOTLIGHT
+  ═══════════════════════════════════════════ -->
+  <div class="section-label">
+    <span class="section-label-text">◼ Illinois Spotlight</span>
+  </div>
+
+  <div class="il-grid">
+    <div class="il-item reveal-ready">
+      <div class="il-tag il-tag-reversed">Reversed</div>
+      <div class="il-hed">Subway Franchise v. IWCC — Repetitive Motion Causation</div>
+      <div class="il-body">Appellate reversal of IWCC denial in food service worker carpal tunnel claim. The court found the Commission improperly elevated IME opinion over treating orthopedist's documented findings, applying a causation standard more restrictive than the statute requires. Illinois plaintiff WC counsel: treating physician + ergonomic documentation remains the strongest causation posture in repetitive motion matters.</div>
+    </div>
+    <div class="il-item reveal-ready">
+      <div class="il-tag il-tag-affirmed">Affirmed</div>
+      <div class="il-hed">Concrete Structures Inc. v. IWCC — Construction AOE/COE</div>
+      <div class="il-body">Commission award affirmed in construction spinal injury matter. Employer's "personal comfort doctrine" deviation argument rejected — the court held the physical task at issue was integral to the work assignment. Clean precedent for plaintiff counsel in IL construction WC matters where the employer argues deviation from employment.</div>
+    </div>
+    <div class="il-item reveal-ready">
+      <div class="il-tag il-tag-reversed">Reversed</div>
+      <div class="il-hed">Heiden v. Westmont School District — TTD and Modified Duty Adequacy</div>
+      <div class="il-body">IWCC denial of TTD reversed on appeal. The Commission had accepted the employer's light-duty offer without analyzing whether available positions fell within the petitioner's medical restrictions. Takeaway for defense counsel: any modified duty offer presented to defeat TTD must be documented as medically appropriate, not merely labeled "light duty." Takeaway for plaintiff counsel: challenge the modified duty offer on restriction specificity every time.</div>
+    </div>
+    <div class="il-item reveal-ready">
+      <div class="il-tag il-tag-watch">Watch</div>
+      <div class="il-hed">HB 3773 — The Offensive Plaintiff Play Hiding in Plain Sight</div>
+      <div class="il-body"><strong>Illinois HB 3773</strong> is operative. The IDHR's definition of "AI decision system" encompasses carrier claim valuation, authorization, and reserve-setting algorithms. Plaintiff WC attorneys who serve HB 3773-grounded discovery demands on carriers in every IL matter involving a denied authorization or disputed settlement valuation will be litigating with information their competitors don't have. This play has not yet been tested at the circuit level — first mover advantage is real and available now.</div>
+    </div>
+  </div>
+
+  <div class="thin-rule"></div>
+
+  <!-- ═══════════════════════════════════════════
+       MEDICAL & EXPERT INTELLIGENCE
+  ═══════════════════════════════════════════ -->
+  <div class="section-label">
+    <span class="section-label-text">◼ Medical &amp; Expert Intelligence</span>
+  </div>
+
   <div class="two-col">
+    <div class="two-col-left">
+      <h3 class="col-hed">The AI Workplace Injury Liability Triangle: Employer, Robot Manufacturer, Software Vendor</h3>
+      <p>The BLS data on robot-related workplace injury growth — 34% year-over-year — has not been matched by legal framework development. When a warehouse picker is injured by an autonomous mobile robot, three liability theories run simultaneously: employer negligence in deployment and training; robot manufacturer product liability for design or manufacturing defect; and AI software vendor liability for algorithmic decision errors that caused the unsafe movement or action.</p>
+      <p>Illinois WC practitioners handling warehouse and manufacturing injuries should be running all three theories in parallel from the first client meeting. The WC claim is the immediate recovery vehicle, but the third-party tort against the manufacturer or software vendor is where the damages ceiling is. Document the robot's ID, manufacturer, software version, and the specific task being executed at the time of injury. That information is often available from the employer's warehouse management system and is frequently not preserved after the incident without a litigation hold letter.</p>
+    </div>
+    <div class="two-col-right">
+      <h3 class="col-hed">Carrier AI Fraud Detection in Discovery: Turning the Surveillance System Against Itself</h3>
+      <p>Insurance carriers use AI fraud detection systems to flag WC and PI claims for investigation — scoring claims for statistical anomaly, running social media surveillance, and cross-referencing prior claim history. These systems generate reports, scores, and flags that are typically retained in the carrier's claims management system and are discoverable in a bad faith action or in any matter where the carrier's claims handling is at issue.</p>
+      <p>The discovery demand that plaintiff WC attorneys should be adding to every bad faith and disputed claim matter: "Produce all AI-generated fraud scores, flags, or investigation referrals generated in connection with this claim, including the model used, the inputs, the output, and any human review of the AI recommendation." Carriers frequently resist this production as proprietary. Push back — the claim handling process is not a trade secret when it's the basis for a benefit denial.</p>
+    </div>
+  </div>
+
+  <div class="thin-rule"></div>
+
+  <!-- ═══════════════════════════════════════════
+       RESOURCE OF THE DAY
+  ═══════════════════════════════════════════ -->
+  <div class="section-label">
+    <span class="section-label-text">◼ Resource of the Day</span>
+  </div>
+
+  <div class="resource-box reveal-ready">
+    <div class="resource-type">Benchmark / Open Source</div>
+    <div class="resource-title">Harvey Legal Agent Benchmark (LAB) — Open Source Legal AI Evaluation Framework</div>
+    <div class="resource-body">Harvey's LAB is the first open-source, practice-grounded evaluation framework for legal AI agents, covering tasks across transactional, litigation, regulatory, and advisory practice areas. For WC/PI practitioners evaluating AI tools, the LAB methodology provides a vendor-neutral lens for assessing whether a product's claimed capabilities are grounded in measurable performance — or marketing. The 7.1% top score gives you the honest baseline for what AI agents can currently do on lawyer-grade tasks.</div>
+    <div class="resource-link"><a href="https://www.harvey.ai/lab" target="_blank">harvey.ai/lab →</a></div>
+  </div>
+
+  <div class="thin-rule"></div>
+
+  <!-- ═══════════════════════════════════════════
+       EDITOR'S DISPATCH
+  ═══════════════════════════════════════════ -->
+  <div class="section-label">
+    <span class="section-label-text">◼ Editor's Dispatch</span>
+  </div>
+
+  <div class="dispatch-grid">
+    <div class="dispatch-item reveal-ready">
+      <div class="dispatch-num">01</div>
+      <div class="dispatch-head">Citation Verification Is Not Optional — It Is Now a $30,000 Line Item</div>
+      <div class="dispatch-body">The Sixth Circuit has priced the cost of not verifying AI-generated citations at $30,000. That number will go up. Every WC/PI practitioner who uses AI for legal research — which at this point means nearly every WC/PI practitioner — needs a verification protocol in their workflow before any filing. The protocol doesn't need to be complicated: pull every cited case from Westlaw or Lexis before the brief goes out. That's it. The failure mode that generates sanctions is skipping this step, not using AI.</div>
+    </div>
+    <div class="dispatch-item reveal-ready">
+      <div class="dispatch-num">02</div>
+      <div class="dispatch-head">What 7.1% Actually Tells You About Legal AI in 2026</div>
+      <div class="dispatch-body">Harvey LAB's 7.1% ceiling is not a disappointment — it's a map. It tells you the tasks where AI can be trusted to operate with minimal human review (structured, rule-bound, high-data tasks) and the tasks where it cannot (judgment-intensive, contextual, adversarial tasks). The practitioners and founders who will win in this market are the ones who design their workflows around that map — not the ones who pretend the map doesn't exist because a vendor demo looked impressive.</div>
+    </div>
+    <div class="dispatch-item reveal-ready">
+      <div class="dispatch-num">03</div>
+      <div class="dispatch-head">HB 3773 Is the Sleeper Issue in Illinois WC Practice Right Now</div>
+      <div class="dispatch-body">Illinois plaintiff WC attorneys are leaving a discovery advantage on the table in every matter involving a carrier AI system. HB 3773 is operative, the IDHR definition is broad, and the carriers are not expecting the demand. The first plaintiff firm to take this argument to circuit court and win a production order compelling a carrier to disclose its claim valuation AI model will have created precedent that transforms discovery in IL WC litigation. Someone is going to do this. It should be you.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       LEGAL FACT / WORD / QUOTE OF THE DAY
+  ═══════════════════════════════════════════ -->
+  <div class="thin-rule"></div>
+  <div class="daily-trio">
+    <div class="daily-item">
+      <div class="daily-label">⚖ Legal Fact of the Day</div>
+      <div class="daily-text">Under the Illinois Workers' Compensation Act, an employer who fails to carry required workers' compensation insurance is subject to a penalty of up to $500 per day of noncompliance — and an injured worker may sue the uninsured employer in civil court without the exclusive remedy bar that normally shields employers from tort liability. Illinois has one of the most aggressive uninsured employer penalty structures in the country.</div>
+    </div>
+    <div class="daily-item">
+      <div class="daily-label">📖 Word of the Day</div>
+      <div class="daily-text"><strong>Comparative fault</strong> <em>(n.)</em> — A tort doctrine apportioning liability between plaintiff and defendant based on each party's relative degree of negligence. Illinois follows a <strong>modified comparative fault</strong> rule under <strong>735 ILCS 5/2-1116</strong>: a plaintiff who is more than 50% at fault is barred from recovery entirely; a plaintiff who is 50% or less at fault recovers damages reduced proportionally by their percentage of fault. Critical in PI cases with contributory negligence defenses.</div>
+    </div>
+    <div class="daily-item">
+      <div class="daily-label">💬 Quote of the Day</div>
+      <div class="daily-text">"It is not what a lawyer tells me I may do; but what humanity, reason, and justice tell me I ought to do."<br><em>— Edmund Burke</em></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="paper-footer">
     <div>
-      <div class="radar-item">
-        <span class="cite">NJ App. Div. — March 27, 2026 · Workers' Compensation</span>
-        <strong>N.W. Mattiacci Law — AI Hallucination Sanctions</strong>: New Jersey appellate court ordered $1,000 in sanctions against an attorney who submitted AI-hallucinated case citations in a WC carrier reimbursement appeal and failed to correct them after opposing counsel flagged the errors. <em>First documented WC-specific AI sanction at the appellate level in 2026; the low dollar amount should not obscure the precedential weight.</em>
-      </div>
-      <div class="radar-item">
-        <span class="cite">6th Circuit — March 2026 · Civil Litigation</span>
-        <strong>$30,000 Combined Sanction:</strong> Two attorneys received joint sanctions after their brief contained over two dozen fabricated citations — including descriptions of cases that "did not exist, did not include the quoted language claimed, or did not discuss or support the proposition for which they were cited." <em>The Sixth Circuit's willingness to levy five-figure sanctions signals escalation for repeat or high-visibility violations.</em>
-      </div>
-      <div class="radar-item">
-        <span class="cite">ABA / State Bars — Ongoing 2026</span>
-        <strong>35+ State Bars Now with Formal AI Guidance:</strong> As of early 2026, over 35 state bar associations have issued formal written guidance on AI use in legal practice. Requirements vary materially — some mandate disclosure on every filing, others only upon request, several have explicit Rule 3.3 candor implications. Illinois Supreme Court AI policy (2025) remains operative; California's Mostafavi warning continues as cautionary precedent. <em>Practitioners in multi-state WC practices face genuinely inconsistent compliance obligations.</em>
-      </div>
+      <strong>Legal Intel</strong> &nbsp;·&nbsp; Vol. I, No. 3 &nbsp;·&nbsp; May 30, 2026<br>
+      unclejim7.github.io/legal-intel
     </div>
-    <div class="col-divider">
-      <div class="radar-item">
-        <span class="cite">Above the Law — May 27, 2026 · PI Strategy</span>
-        <strong>"Technology and AI: Turning Personal Injury Litigation Upside Down":</strong> Above the Law analysis argues plaintiffs' lawyers using AI tools are outpacing defense firms that haven't matched investment — "if defense firms aren't keeping up, what were once their advantages may well become liabilities as plaintiffs' lawyers become more sophisticated." <em>The defense bar's institutional inertia is becoming an asymmetric liability in case preparation.</em>
-      </div>
-      <div class="radar-item">
-        <span class="cite">WC Insurance Carriers — April 2026 · Market</span>
-        <strong>WC Coverage Products May Evolve Toward Commercial Package Policies:</strong> EY insurance research finds that as physical AI causes worker injuries with multi-party liability chains, "workers' compensation products may start to resemble broader commercial package policies." Traditional single-employer liability frameworks weren't built for AI-system failure scenarios. <em>Plaintiff WC attorneys should begin tracking manufacturer third-party claims alongside standard WC petitions in automation-heavy workplace injury cases.</em>
-      </div>
-      <div class="radar-item">
-        <span class="cite">Anthropic / Thomson Reuters — May 12, 2026 · Legal AI Infrastructure</span>
-        <strong>Claude for Legal — 20+ MCP Connectors, 12 Practice Plugins:</strong> Anthropic's biggest legal push to date launched May 12, connecting Claude to the tools law firms run on via Model Context Protocol. Thomson Reuters simultaneously launched a CoCounsel Legal MCP integration with Claude. Legal professionals became Anthropic's most engaged Cowork user base. <em>The connectors don't yet include WC-specific integrations (CompFile, Advisen) — a gap that founders should be building toward.</em>
-      </div>
+    <div class="footer-legal">
+      All editions AI-generated. Not legal advice. Verify before acting professionally.<br>
+      © 2026 Legal Intel. Est. May 2026.
     </div>
-  </div>
+  </footer>
 
-  <!-- ILLINOIS SPOTLIGHT -->
-  <div class="section-label">◼ Illinois Spotlight — WC &amp; AI Employment Law</div>
-  <div class="illinois-box">
-    <h3>🏛 Illinois: The Most Consequential AI Employment Law Jurisdiction in the Country</h3>
-    <div class="two-col">
-      <div>
-        <div class="radar-item">
-          <span class="cite">2026 IL App (5th) 250429WC · April 13, 2026</span>
-          <strong>Subway v. Illinois Workers' Compensation Commission:</strong> Fifth District reversed the circuit court, set aside the Commission decision, and remanded. Montgomery County (ROCHFORD). Full analysis pending publication; the reversal pattern continues a 2026 appellate trend of scrutinizing IWCC evidentiary standards.
-        </div>
-        <div class="radar-item">
-          <span class="cite">2026 IL App (1st) 242493WC · March 6, 2026</span>
-          <strong>Concrete Structures of the Midwest v. IWCC:</strong> First District affirmed the Commission. (BARBERIS). Defense outcome; the affirmance confirms the Commission's factual findings on causation and TTD held under employer challenge.
-        </div>
-        <div class="radar-item">
-          <span class="cite">2026 IL App (3d) 250071 · March 5, 2026</span>
-          <strong>Heiden v. Village of Westmont:</strong> Third District reversed and remanded on unspecified grounds. DuPage County (ANDERSON). Watch for published opinion; municipal employer WC decisions carry precedential value across Illinois public-sector claims.
-        </div>
-      </div>
-      <div>
-        <div class="radar-item">
-          <span class="cite">HB 3773 — Illinois Human Rights Act · Operative January 1, 2026</span>
-          <strong>Illinois AI Employment Law Now Fully Operative:</strong> HB 3773's amendments to the IHRA prohibit employers from using AI that has a discriminatory effect on employees in any employment decision — hiring, promotion, discharge, discipline, tenure. Employers must post notice wherever employment notices are required and include disclosure in employee handbooks. The Illinois Department of Human Rights has released draft implementing rules ("Subpart J") but final regulations have not published. <em>WC practitioners: AI-driven return-to-work decisions, vocational rehab tool recommendations, and claim assessment software used by carriers now carry HB 3773 exposure in Illinois. A carrier using AI to route modified duty offers could face IHRA challenge if the algorithm produces disparate impact on a protected class.</em>
-        </div>
-        <div class="radar-item">
-          <span class="cite">IDHR Draft Rules · Ongoing</span>
-          <strong>Broader Definition Than Expected:</strong> IDHR's draft rules define "artificial intelligence" expansively to include any machine-based system that generates outputs influencing employment decisions — no specific exemptions for third-party vendor tools. Employers cannot disclaim HB 3773 obligations by pointing to a software vendor.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MEDICAL & EXPERT INTELLIGENCE -->
-  <div class="section-label">◼ Medical &amp; Expert Intelligence</div>
-  <div class="two-col">
-    <div>
-      <div class="medical-item">
-        <strong>AI Physical Injury Claims: The Liability Triangle Forming in WC Courts</strong><br>
-        Ohio WC practitioners report increasing claims where an AI system contributed to the injury mechanism — robots in warehouse fulfillment centers, AI-controlled manufacturing machinery, autonomous material handling. Under current Ohio law, the employer remains the WC respondent; but the robot or AI system manufacturer is a third party not immunized by the WC exclusive remedy. Plaintiff WC attorneys who file only the comp claim may be leaving a parallel product liability action on the table. The duty to investigate the third-party manufacturer claim is emerging as a competence question.
-      </div>
-      <div class="medical-item">
-        <strong>AI Fraud Detection in WC Claims: What Carriers Are Running</strong><br>
-        Carriers' AI fraud detection tools now analyze FROI data, provider billing patterns across claims, and claimant medical history across jurisdictions for inconsistencies. A provider who bills the same procedure code across unrelated claims will be flagged automatically. For plaintiff practitioners, this means defense-side "pattern analysis" results may appear in discovery — understanding what these systems flag (and how often they flag incorrect anomalies) is increasingly important to medical causation strategy.
-      </div>
-    </div>
-    <div class="col-divider">
-      <div class="medical-item">
-        <strong>AI Medical Chronology: The 30-Second Record Review Changes Firm Economics</strong><br>
-        Eve Legal's platform, now used by 800+ plaintiff firms, processes entire medical record sets into complete chronologies in under a minute. The downstream economic impact: firms can evaluate more cases at intake, identify undervalued cases earlier, and send demand packages the same day records arrive. <strong>The strategic implication for WC defense:</strong> when opposing plaintiff counsel runs an overnight audit and surfaces a TBI that wasn't in the demand package, the defense team learns about it through discovery, not at deposition.
-      </div>
-      <div class="medical-item">
-        <strong>Workers' Comp Products May Evolve Toward Commercial Package Policies</strong><br>
-        EY's Americas insurance consulting lead notes that as AI and physical automation increase multi-party injury scenarios — software failure, sensor malfunction, algorithm error — traditional single-employer WC liability frameworks are straining. "Underwriting is increasingly tied to software, sensors, and real-time data." Practitioners building AI-related WC/PI claims should document the AI system's deployment architecture, version control, and operator training records from the outset — the same way they'd document a defective forklift.
-      </div>
-    </div>
-  </div>
-
-  <!-- RESOURCE OF THE DAY -->
-  <div class="section-label">◼ Resource of the Day</div>
-  <div class="resource-card">
-    <div class="res-title">Harvey Legal Agent Benchmark (LAB) — GitHub Repository &amp; Initial Results</div>
-    <div class="res-src">Harvey AI · github.com/harveyai/harvey-labs &amp; harvey.ai/blog/legal-agent-benchmark-initial-results</div>
-    <p>The open-source LAB repository is the most important publicly available framework for evaluating what AI agents can actually do on legal work. The initial results post (published May 26) gives the first model leaderboard — showing even the best frontier models pass fewer than 8% of tasks under all-pass grading. For any WC/PI practitioner evaluating agentic AI tools, reading the results methodology is more useful than any vendor demo: it tells you exactly what "capable" means, and what it doesn't, in a legal task context.</p>
-    <p><a href="https://github.com/harveyai/harvey-labs" target="_blank">→ github.com/harveyai/harvey-labs</a> &nbsp;·&nbsp; <a href="https://www.harvey.ai/blog/legal-agent-benchmark-initial-results" target="_blank">→ Initial Results Post</a></p>
-  </div>
-
-  <!-- EDITOR'S DISPATCH -->
-  <div class="section-label">◼ Editor's Dispatch — Quick Takes</div>
-  <div class="dispatch-item">
-    <span class="take-label">Take 01 · The Sanctions Escalation Ladder</span>
-    The AI hallucination sanction pattern now has a documented escalation arc: warnings → $1K–$5K fines → $10K+ → $30K+ → calls for disbarment. The NJ WC carrier appeal sanction (March 2026) is notable not for its dollar amount but for its fact pattern — opposing counsel flagged the fake citations and the attorney failed to act. Courts are less forgiving of inaction than of initial error. WC practitioners operating in multi-state practices should implement a citation verification protocol <em>now</em>, before the first violation, not as a remediation response after one.
-  </div>
-  <div class="dispatch-item">
-    <span class="take-label">Take 02 · The 7.1% Problem and What It Actually Means for Practice</span>
-    Harvey's LAB result that Claude Opus 4.7 — the current best model on legal tasks — passes only 7.1% of complex legal tasks autonomously is widely being read as "AI isn't ready." That's the wrong read. The correct read is: AI agents are production-ready for <em>some</em> tasks and not others, and the benchmark tells you which. For WC/PI practitioners, tasks like medical chronology extraction, form completion, demand package structuring, and intake triage are far more amenable to current AI than complex causation analysis or appellate brief writing. Build your workflow around the capability gap, not against it.
-  </div>
-  <div class="dispatch-item">
-    <span class="take-label">Take 03 · Illinois HB 3773 Is a Plaintiff WC Attorney's Hidden Weapon</span>
-    Illinois practitioners are almost universally focused on HB 3773 as a compliance burden for employer-clients. That framing misses the offensive play. If a carrier or third-party administrator uses an AI system that routes modified duty assignments, voc-rehab referrals, or return-to-work decisions in a way that has disparate impact on a protected class — national origin, age, disability — that's an IHRA claim running alongside the WC petition. The IDHR's broad definition of "AI" catches vendor tools that employers deploy. Plaintiff WC practitioners in Illinois should be asking: <em>what AI systems does the carrier use to manage this claimant's file?</em>
-  </div>
-
-  <!-- FOOTER -->
 </main>
 
-<footer class="footer">
-  Legal Intel &nbsp;·&nbsp; Vol. I, No. 3 &nbsp;·&nbsp; Saturday, May 30, 2026 &nbsp;·&nbsp; All editions AI-generated &nbsp;·&nbsp; Not legal advice. Verify before acting professionally. &nbsp;·&nbsp; <a href="https://unclejim7.github.io/legal-intel" style="color: var(--muted)">unclejim7.github.io/legal-intel</a>
-</footer>
+<script>
+(function() {
+  const els = document.querySelectorAll('.headline-item, .caselaw-item, .il-item, .dispatch-item, .tool-card, .agentic-block, .resource-box');
+  els.forEach(el => el.classList.add('reveal-ready'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+})();
+</script>
 
 </body>
 </html>
