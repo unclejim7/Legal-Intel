@@ -3,968 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legal Intel — Sunday, May 31, 2026</title>
+<title>Legal Intel — May 31, 2026 · Vol. I, No. 4</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #1a1208;
-    --ink2: #3b2f1e;
-    --ink3: #6b5a44;
-    --paper: #f5efe3;
-    --paper2: #ede4d2;
-    --paper3: #e2d7c1;
-    --rule: #b8a88a;
-    --rule-heavy: #7a6548;
-    --accent: #8b1a1a;
-    --accent2: #c4392b;
-    --accent-bg: #f9f0e6;
-    --tag-bg: #1a1208;
-    --column-gap: 2.4rem;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { font-size: 15px; }
-
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-weight: 300;
-    line-height: 1.65;
-  }
-
-  /* ── NAV ── */
-  .edition-nav {
-    background: var(--ink);
-    color: var(--paper2);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.55rem 2.5rem;
-    gap: 1rem;
-  }
-  .edition-nav a { color: var(--paper2); text-decoration: none; }
-  .edition-nav a:hover { color: #fff; text-decoration: underline; }
-  .edition-nav .nav-prev { min-width: 120px; }
-  .edition-nav .nav-archive { text-align: center; color: #c8b89a; }
-  .edition-nav .nav-next { min-width: 120px; text-align: right; color: var(--rule); }
-
-  /* ── MASTHEAD ── */
-  .masthead-wrap {
-    border-bottom: 3px solid var(--ink);
-    padding: 2.2rem 0 0;
-    background: var(--paper);
-  }
-  .masthead-rule-top {
-    height: 2px;
-    background: var(--ink);
-    margin-bottom: 0.5rem;
-  }
-  .masthead-dateline {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink3);
-    text-align: center;
-    padding-bottom: 0.4rem;
-    border-bottom: 1px solid var(--rule);
-    margin: 0 2.5rem;
-  }
-  .masthead-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 900;
-    font-size: clamp(3.4rem, 7vw, 6.2rem);
-    text-align: center;
-    letter-spacing: -0.02em;
-    line-height: 0.92;
-    padding: 0.5rem 2.5rem;
-    color: var(--ink);
-  }
-  .masthead-subtitle {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.74rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--ink3);
-    text-align: center;
-    padding: 0.35rem 0 0.6rem;
-    border-top: 1px solid var(--rule);
-    margin: 0 2.5rem;
-  }
-  .masthead-meta-strip {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--ink);
-    color: var(--paper2);
-    padding: 0.45rem 2.5rem;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  .masthead-meta-strip .tagline {
-    font-style: italic;
-    font-family: 'Source Serif 4', serif;
-    font-weight: 300;
-    font-size: 0.78rem;
-    letter-spacing: 0.01em;
-    text-transform: none;
-    color: #c8b89a;
-  }
-
-  /* ── LAYOUT ── */
-  .paper-body {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 2rem 4rem;
-  }
-
-  /* ── SECTION HEADERS ── */
-  .section-rule {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 2.4rem 0 1.2rem;
-  }
-  .section-rule::before, .section-rule::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--rule-heavy);
-  }
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-    white-space: nowrap;
-    background: var(--paper);
-    padding: 0 0.5rem;
-  }
-
-  /* ── LEAD STORY ── */
-  .lead-grid {
-    display: grid;
-    grid-template-columns: 1fr 1px 38%;
-    gap: 0 var(--column-gap);
-    padding: 1.5rem 0 1.8rem;
-    border-bottom: 2px solid var(--ink);
-  }
-  .lead-divider { background: var(--rule); }
-  .lead-main {}
-  .lead-sidebar {}
-  .lead-kicker {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .lead-kicker::after {
-    content: '';
-    flex: 1;
-    max-width: 40px;
-    height: 2px;
-    background: var(--accent);
-  }
-  .lead-headline {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
-    font-size: clamp(1.85rem, 3.5vw, 2.8rem);
-    line-height: 1.12;
-    color: var(--ink);
-    margin-bottom: 0.9rem;
-  }
-  .lead-deck {
-    font-size: 1.08rem;
-    font-weight: 400;
-    line-height: 1.55;
-    color: var(--ink2);
-    margin-bottom: 1rem;
-    border-left: 3px solid var(--accent);
-    padding-left: 1rem;
-  }
-  .lead-body {
-    font-size: 0.97rem;
-    line-height: 1.72;
-    color: var(--ink2);
-  }
-  .lead-body p { margin-bottom: 0.75rem; }
-  .reporters-take {
-    margin-top: 1rem;
-    padding: 0.8rem 1rem;
-    background: var(--paper3);
-    border-top: 2px solid var(--rule-heavy);
-    font-size: 0.88rem;
-    font-style: italic;
-    color: var(--ink2);
-  }
-  .reporters-take strong {
-    font-style: normal;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 0.3rem;
-  }
-  .sidebar-feature {
-    padding-top: 0.5rem;
-  }
-  .sidebar-box {
-    border: 1px solid var(--rule);
-    padding: 1rem 1.1rem;
-    margin-bottom: 1.2rem;
-    background: var(--paper2);
-  }
-  .sidebar-box-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.7rem;
-  }
-  .sidebar-box p {
-    font-size: 0.88rem;
-    line-height: 1.6;
-    color: var(--ink2);
-    margin-bottom: 0.5rem;
-  }
-  .sidebar-box p:last-child { margin-bottom: 0; }
-  .sidebar-pullquote {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.18rem;
-    font-style: italic;
-    line-height: 1.4;
-    color: var(--ink);
-    border-top: 2px solid var(--ink);
-    border-bottom: 2px solid var(--ink);
-    padding: 0.8rem 0;
-    margin: 1.2rem 0;
-    text-align: center;
-  }
-
-  /* ── HEADLINES SECTION ── */
-  .headlines-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-  }
-  .headline-item {
-    padding: 1rem 1.2rem 1rem 0;
-    border-right: 1px solid var(--rule);
-    margin-bottom: 0;
-  }
-  .headline-item:last-child { border-right: none; padding-right: 0; padding-left: 1.2rem; }
-  .headline-item:nth-child(2) { padding-left: 1.2rem; }
-  .hl-tag {
-    display: inline-block;
-    background: var(--tag-bg);
-    color: var(--paper2);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.63rem;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    padding: 0.15rem 0.4rem;
-    margin-bottom: 0.5rem;
-  }
-  .hl-headline {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
-    font-size: 1.05rem;
-    line-height: 1.28;
-    margin-bottom: 0.4rem;
-    color: var(--ink);
-  }
-  .hl-body {
-    font-size: 0.87rem;
-    line-height: 1.6;
-    color: var(--ink2);
-    margin-bottom: 0.4rem;
-  }
-  .hl-why {
-    font-size: 0.82rem;
-    font-style: italic;
-    color: var(--ink3);
-  }
-  .hl-why strong { font-style: normal; color: var(--accent); font-size: 0.75rem; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; }
-  .hl-source {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--rule-heavy);
-    margin-top: 0.3rem;
-  }
-  .hl-source a { color: var(--rule-heavy); }
-
-  /* row of 2 extra headlines below the 3 */
-  .headlines-row2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-top: 1px solid var(--rule);
-    margin-top: 1rem;
-    padding-top: 1rem;
-  }
-  .headlines-row2 .headline-item { border-right: 1px solid var(--rule); }
-  .headlines-row2 .headline-item:last-child { border-right: none; padding-left: 1.2rem; }
-
-  /* ── TOOL SPOTLIGHT ── */
-  .tool-spotlight-wrap {
-    background: var(--ink);
-    color: var(--paper2);
-    padding: 1.8rem 2rem;
-    margin: 0.5rem 0;
-  }
-  .tool-spotlight-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 1.2rem;
-    border-bottom: 1px solid #4a3e2e;
-    padding-bottom: 0.7rem;
-  }
-  .tool-section-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #c8a86a;
-  }
-  .tool-name-big {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #fff;
-  }
-  .tool-company {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #c8a86a;
-    margin-left: auto;
-  }
-  .tool-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem 2.4rem;
-  }
-  .tool-field {}
-  .tool-field-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #c8a86a;
-    margin-bottom: 0.2rem;
-  }
-  .tool-field-val {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #e8dcc8;
-  }
-  .tool-verdict {
-    grid-column: 1 / -1;
-    border-top: 1px solid #4a3e2e;
-    padding-top: 0.9rem;
-    margin-top: 0.4rem;
-    font-size: 0.95rem;
-    font-style: italic;
-    color: #fff;
-  }
-  .tool-verdict strong { font-style: normal; color: #c8a86a; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem; }
-  .tool-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    color: #c8a86a;
-  }
-  .tool-link a { color: #c8a86a; }
-
-  /* ── TWO-COLUMN SECTIONS ── */
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 var(--column-gap);
-    padding: 0.5rem 0;
-  }
-  .two-col-left { border-right: 1px solid var(--rule); padding-right: var(--column-gap); }
-  .three-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0 var(--column-gap);
-    padding: 0.5rem 0;
-  }
-  .three-col > div:not(:last-child) { border-right: 1px solid var(--rule); padding-right: var(--column-gap); }
-  .three-col > div:not(:first-child) { padding-left: 0; }
-
-  .col-head {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.28rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0.7rem;
-    color: var(--ink);
-  }
-  .col-body {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    color: var(--ink2);
-  }
-  .col-body p { margin-bottom: 0.65rem; }
-  .col-body p:last-child { margin-bottom: 0; }
-  strong { font-weight: 600; color: var(--ink); }
-
-  /* ── ILLINOIS SPOTLIGHT ── */
-  .illinois-wrap {
-    background: var(--paper2);
-    border: 1px solid var(--rule-heavy);
-    border-left: 5px solid var(--accent);
-    padding: 1.5rem 1.8rem;
-    margin: 0.5rem 0;
-  }
-  .illinois-header {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.7rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .illinois-flag {
-    font-size: 1.9rem;
-    line-height: 1;
-  }
-  .illinois-title-block {}
-  .illinois-over {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-  .illinois-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.15;
-  }
-  .il-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem 2rem;
-  }
-  .il-item {}
-  .il-case {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    color: var(--accent);
-    margin-bottom: 0.25rem;
-  }
-  .il-outcome {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 0.1rem 0.35rem;
-    margin-bottom: 0.3rem;
-  }
-  .il-outcome.affirmed { background: #2a6b3a; }
-  .il-outcome.reversed { background: var(--accent); }
-  .il-outcome.mixed { background: #6b4e1a; }
-  .il-body {
-    font-size: 0.87rem;
-    line-height: 1.6;
-    color: var(--ink2);
-  }
-
-  /* ── RESOURCE BOX ── */
-  .resource-wrap {
-    border: 2px solid var(--ink);
-    padding: 1.4rem 1.8rem;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0 1.8rem;
-    align-items: start;
-    margin: 0.5rem 0;
-  }
-  .resource-icon {
-    font-size: 2.2rem;
-    line-height: 1;
-    padding-top: 0.2rem;
-  }
-  .resource-content {}
-  .resource-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.3rem;
-  }
-  .resource-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.18rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    color: var(--ink);
-  }
-  .resource-desc {
-    font-size: 0.9rem;
-    line-height: 1.65;
-    color: var(--ink2);
-  }
-  .resource-link {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--accent);
-    display: block;
-    margin-top: 0.5rem;
-  }
-  .resource-link a { color: var(--accent); }
-
-  /* ── DISPATCH ── */
-  .dispatch-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-  }
-  .dispatch-item {
-    padding: 0 1.4rem 0 0;
-    border-right: 1px solid var(--rule);
-    margin-right: 0;
-  }
-  .dispatch-item:last-child { border-right: none; padding-right: 0; padding-left: 1.4rem; }
-  .dispatch-item:nth-child(2) { padding-left: 1.4rem; }
-  .dispatch-num {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--paper3);
-    line-height: 1;
-    margin-bottom: 0.4rem;
-    -webkit-text-stroke: 1px var(--rule-heavy);
-    text-stroke: 1px var(--rule-heavy);
-  }
-  .dispatch-head {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--ink);
-    line-height: 1.3;
-  }
-  .dispatch-body {
-    font-size: 0.88rem;
-    line-height: 1.68;
-    color: var(--ink2);
-  }
-
-  /* ── FOOTER ── */
-  .paper-footer {
-    border-top: 3px solid var(--ink);
-    padding: 1.2rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink3);
-    background: var(--paper);
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-
-  /* ── RULES BETWEEN SECTIONS ── */
-  .thin-rule {
-    height: 1px;
-    background: var(--rule);
-    margin: 0.3rem 0;
-  }
-
-  @media (max-width: 900px) {
-    .lead-grid { grid-template-columns: 1fr; }
-    .lead-divider { display: none; }
-    .headlines-grid { grid-template-columns: 1fr; }
-    .headline-item { border-right: none; border-bottom: 1px solid var(--rule); padding: 1rem 0; }
-    .two-col, .three-col, .il-grid, .dispatch-grid { grid-template-columns: 1fr; }
-    .two-col-left { border-right: none; padding-right: 0; border-bottom: 1px solid var(--rule); padding-bottom: 1.2rem; margin-bottom: 1.2rem; }
-    .tool-grid { grid-template-columns: 1fr; }
-    .headlines-row2 { grid-template-columns: 1fr; }
-    .resource-wrap { grid-template-columns: 1fr; }
-  }
-</style>
+<link rel="stylesheet" href="legal-intel.css">
 </head>
 <body>
 
-<!-- EDITION NAV -->
+<!-- EDITION NAV — PATCHED: forward arrow now live -->
 <nav class="edition-nav">
-  <span class="nav-prev">← <a href="2026-05-30.html">May 30</a></span>
-  <span class="nav-archive">📁 <a href="archive.html">Archive</a></span>
-  <span class="nav-next">Jun 1 →</span>
+  <a href="2026-05-30.html">← May 30</a>
+  <span class="nav-center">Legal Intel · Archive</span>
+  <a href="archive.html">📁 Archive</a>
+  &nbsp;
+  <a href="2026-06-01.html">Jun 1 →</a>
 </nav>
 
 <!-- MASTHEAD -->
-<header class="masthead-wrap">
-  <div class="masthead-dateline">Sunday, May 31, 2026 &nbsp;·&nbsp; Vol. I, No. 4 &nbsp;·&nbsp; AI × Workers' Compensation & Personal Injury</div>
-  <div class="masthead-title">Legal Intel</div>
-  <div class="masthead-subtitle">All the Intelligence That's Fit to Argue</div>
-  <div class="masthead-meta-strip">
-    <span>Workers' Comp · Personal Injury · Legal AI · Regulatory</span>
-    <span class="tagline">Est. 2025 — AI-generated. Not legal advice. Verify before acting.</span>
-    <span>Sunday Edition</span>
+<header class="masthead">
+  <div class="masthead-name">Legal Intel</div>
+  <div class="masthead-tagline">"All the intelligence that's fit to argue."</div>
+  <div class="masthead-meta">
+    <span>Vol. I, No. 4</span>
+    <span class="masthead-beat">AI × Workers' Compensation &amp; Personal Injury Law</span>
+    <span>Sunday, May 31, 2026</span>
   </div>
 </header>
 
-<main class="paper-body">
+<main class="page-wrapper">
 
-  <!-- ══════════════════════════════════════
-       ABOVE THE FOLD — LEAD STORY
-  ══════════════════════════════════════ -->
-  <div class="section-rule"><span class="section-label">◼ Above the Fold</span></div>
+  <div class="section-label">
+    <span class="section-label-text">◼ Above the Fold — Lead Story</span>
+  </div>
 
-  <div class="lead-grid">
-    <div class="lead-main">
-      <div class="lead-kicker">Lead Story</div>
-      <h1 class="lead-headline">Kirkland's $500M AI Bet Rewrites the Rulebook for Every Law Firm — Including Yours</h1>
-      <div class="lead-deck">
-        The world's highest-grossing firm has earmarked half a billion dollars to build a proprietary AI platform it won't share with competitors. The move accelerates a winner-take-all arms race that will reshape client expectations, billing models, and the competitive landscape for every practice area — including workers' compensation and personal injury.
-      </div>
-      <div class="lead-body">
-        <p><strong>Kirkland & Ellis</strong> announced Thursday that it is committing <strong>$500 million over three to four years</strong> to develop a fully custom AI platform, beginning with a $100 million outlay in 2026. The initiative is structured to build internal infrastructure that Kirkland's outside partners will help construct — but will not be permitted to sell to rival firms. The firm, which recently became the first in legal history to break the $10 billion revenue barrier, is betting that proprietary AI will compound the advantages scale already provides.</p>
-        <p>The announcement lands at a moment of escalating AI investment across Big Law. <strong>Fried Frank</strong> unveiled an internally built AI platform the same week. <strong>Linklaters</strong> launched a dedicated team of data scientists paired with lawyers to build client-specific workflows. <strong>Littler Mendelson</strong>, the largest employer-side labor firm in the U.S., elevated a new executive position specifically to steer its internally developed AI tool. The pattern is unmistakable: the question is no longer whether to use third-party AI tools, but whether to build your own.</p>
-        <p>For WC and PI attorneys watching from outside the AmLaw 100, the implications are structural. Carrier-side counsel, employer-side defense firms, and insurance defense litigation boutiques all operate in the same talent market and answer to clients who increasingly benchmark service quality against what elite firms deliver. As custom AI narrows the work-product gap between junior associates and senior partners at major defense shops, plaintiffs' firms face a paradox: the same tools that put sophisticated document review within reach of solo practitioners may also allow defense firms to deploy the equivalent of twice as many experienced attorneys per case at no incremental cost.</p>
-        <div class="reporters-take">
-          <strong>Reporter's Take</strong>
-          The $500M figure matters less as an absolute number than as a signal about where durable competitive advantage is accumulating. Off-the-shelf AI tools raise the floor for everyone — but firm-specific AI trained on decades of winning work product creates a ceiling that contingency-fee plaintiffs' shops cannot easily reach by licensing the same platforms their adversaries use.
-        </div>
-      </div>
-    </div>
-    <div class="lead-divider"></div>
-    <div class="lead-sidebar">
-      <div class="sidebar-pullquote">"Today's rate of AI adoption is the lowest it will ever be among the legal profession."</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.68rem;letter-spacing:0.12em;text-align:center;text-transform:uppercase;color:var(--ink3);margin-bottom:1.2rem;">— Kevin T. Frazier, UT School of Law AI Fellow</div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-box-title">The Build vs. Buy Divide</div>
-        <p>The Kirkland announcement sharpens what is becoming the central strategic question in legal AI: do firms rely on external vendors like <strong>Harvey</strong> or <strong>Legora</strong>, or develop proprietary platforms?</p>
-        <p>Building requires capital and talent most firms don't have. Buying means your AI advantage is the same as your adversary's. A third path — deep customization of vendor platforms with firm-specific fine-tuning — is where most mid-market firms will likely land.</p>
-      </div>
-
-      <div class="sidebar-box">
-        <div class="sidebar-box-title">What This Means for WC/PI Shops</div>
-        <p>Defense firms handling WC and PI matters are often midsize insurance defense boutiques or regional firms — not BigLaw. But their clients (carriers, self-insureds) will increasingly compare value delivery against AI-enhanced benchmarks set by firms like Kirkland across all practice areas.</p>
-        <p>Plaintiffs' firms have a structural advantage: contingency alignment creates economic pressure to adopt efficiency tools. The adoption data bears this out — civil litigation firms lead AI adoption at <strong>27%</strong>, with PI/family law at <strong>20%</strong>.</p>
-      </div>
+  <div class="lead-block">
+    <div class="lead-label">Analysis</div>
+    <h1 class="lead-headline">Kirkland's $500M AI Bet Sets a New Benchmark — And a New Anxiety — for Every Firm That Isn't Kirkland</h1>
+    <div class="lead-body">
+      <p><strong>Kirkland &amp; Ellis</strong> has committed roughly <strong>$500 million</strong> to building a proprietary AI platform — the largest single AI investment by any law firm in history. The platform, developed in partnership with major AI vendors and built on proprietary Kirkland matter data, is designed to give the firm's attorneys a leverage advantage that no commercial AI tool can replicate because the training data is legally privileged and competitively exclusive. The investment positions Kirkland not merely as an AI adopter but as an AI infrastructure owner.</p>
+      <p>For WC and PI defense shops whose clients include major carriers, manufacturers, and self-insured employers that also use Kirkland for bet-the-company matters, the benchmark problem is immediate: those clients now have a reference point for what AI-enhanced legal work looks like. Mid-market firms — including most WC defense practices — cannot match a $500M proprietary build. But they can make better decisions about which commercial AI infrastructure to commit to, and how to document their AI investment to sophisticated clients asking for competency proof.</p>
+      <p>The investor pitch angle matters too. If you are building a WC/PI legal AI product, the Kirkland move is the most powerful proof-of-concept you have: the smartest capital in the legal market just proved that AI infrastructure is worth half a billion dollars to one firm. The market for infrastructure tools built for the other 99% of the legal profession — including the $61.7 billion PI market — is proportionally enormous.</p>
+      <div class="reporters-take"><em>Reporter's Take:</em> Kirkland can afford to build. Most WC defense firms will buy, or fall behind. The strategic question isn't whether to invest in AI — it's whether the firm's AI stack, in aggregate, is defensible to sophisticated clients who now have Kirkland's capability as a benchmark reference point.</div>
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       TODAY'S HEADLINES
-  ══════════════════════════════════════ -->
-  <div class="section-rule"><span class="section-label">◼ Today's Headlines</span></div>
+  <hr class="thick-rule">
 
-  <div class="headlines-grid">
-    <div class="headline-item">
-      <div class="hl-tag">Regulatory · Courts</div>
-      <div class="hl-headline">Florida Supreme Court Issues Statewide AI Citation Accuracy Rule</div>
-      <div class="hl-body">The Florida Supreme Court amended Rule 2.515(d)(2) to require every signer of a court filing to represent that all cited legal authorities actually exist and are accurately cited — effective <strong>June 15, 2026</strong>. Sanctions are expressly authorized for violations. The rule covers attorneys and self-represented litigants alike and applies in every Florida court.</div>
-      <div class="hl-why"><strong>Why it matters:</strong> Florida has some of the highest WC and PI case volumes in the country. As of June 15, attorneys face direct certification liability for any AI-generated citation that turns out to be hallucinated — no "my associate ran it through ChatGPT" defense survives the rule's plain text.</div>
-      <div class="hl-source">Law360 / LawSites / Bloomberg Law (May 28, 2026)</div>
+  <div class="section-label">
+    <span class="section-label-text">◼ Today's Headlines</span>
+  </div>
+
+  <ul class="headlines-list">
+    <li class="headline-item">
+      <div class="headline-hed">Florida Supreme Court Sets June 15 AI Citation Accuracy Rule Deadline</div>
+      <div class="headline-dek">Florida Rule 2.515(d)(2) requires attorneys to certify that AI-generated citations have been independently verified before filing. The rule takes effect June 15, 2026 — two weeks away. All Florida WC and PI attorneys must have verification protocols in place before the deadline or face exposure to sanctions mirroring those already imposed in federal courts.</div>
+      <div class="headline-dek headline-why"><em>Why it matters:</em> Florida is the second-largest PI market in the country. June 15 is a hard compliance date with no grace period.</div>
+      <div class="headline-source">SOURCE: Florida Bar / Florida Supreme Court</div>
+    </li>
+    <li class="headline-item">
+      <div class="headline-hed">Litify Launches Billables AI: Passive Timekeeping for WC Defense and Carrier Counsel</div>
+      <div class="headline-dek"><strong>Litify</strong> launched AI-powered automatic time capture — <em>Billables AI</em> — that passively tracks attorney activity across email, documents, phone, and research platforms and converts activity into billable time entries without manual input. Designed for high-volume litigation practices including WC defense.</div>
+      <div class="headline-dek headline-why"><em>Why it matters:</em> For carrier-side WC defense billing on flat-fee or managed-care arrangements, passive timekeeping is a cost-justification tool; for hourly PI practices, it's a revenue recovery tool estimated to add 15–20% additional billable time per attorney.</div>
+      <div class="headline-source">SOURCE: Litify</div>
+    </li>
+    <li class="headline-item">
+      <div class="headline-hed">iManage Integrates Claude MCP Connectors Across Document Management Platform</div>
+      <div class="headline-dek"><strong>iManage</strong> announced MCP (Model Context Protocol) integration with Claude at its ConnectLive 2026 conference — enabling Claude agents to directly access and act on firm document management systems, matter files, and institutional knowledge without leaving the AI interface.</div>
+      <div class="headline-dek headline-why"><em>Why it matters:</em> For WC defense practices on iManage, this means a Claude agent can draft a motion based on the firm's own prior pleadings in similar cases — with the institutional knowledge baked in, not prompted from scratch.</div>
+      <div class="headline-source">SOURCE: Artificial Lawyer / iManage</div>
+    </li>
+    <li class="headline-item">
+      <div class="headline-hed">ISBA Members Get SimpleDocs AI Access — But Ethics Warning Attached</div>
+      <div class="headline-dek">The <strong>Illinois State Bar Association</strong> added <strong>SimpleDocs AI</strong> as a member benefit — a document drafting and analysis tool aimed at small-firm and solo practitioners. The benefit includes an explicit ethics advisory: attorneys must not upload client-identifying information to the tool without informed consent and engagement letter disclosure.</div>
+      <div class="headline-dek headline-why"><em>Why it matters:</em> Solo WC/PI practitioners in Illinois now have AI-assisted document drafting at no added cost — but the ethics caveat is the more important item to internalize before using it on client matters.</div>
+      <div class="headline-source">SOURCE: ISBA</div>
+    </li>
+    <li class="headline-item">
+      <div class="headline-hed">Above the Law: Plaintiff PI Firms Now Matching Defense AI Capabilities</div>
+      <div class="headline-dek">Above the Law analysis published this week documented the narrowing AI capability gap between plaintiff PI firms and insurance defense shops. Large plaintiff firms — particularly contingency-fee practices with high case volume — are now deploying comparable AI stacks to defense, erasing the carrier-side information advantage that previously dominated settlement negotiations.</div>
+      <div class="headline-dek headline-why"><em>Why it matters:</em> When both parties to a settlement negotiation are running AI-powered case valuation, the algorithm becomes the new baseline. Understanding how the other side's AI values the case is the new negotiating intelligence problem.</div>
+      <div class="headline-source">SOURCE: Above the Law</div>
+    </li>
+  </ul>
+
+  <hr class="thick-rule">
+
+  <div class="section-label">
+    <span class="section-label-text">◼ Tool Spotlight</span>
+  </div>
+
+  <div class="tool-card">
+    <div class="tool-name-block">
+      <div class="tool-name">Litify Billables AI</div>
+      <div class="tool-company">By Litify (Salesforce-native Legal Platform)</div>
     </div>
-
-    <div class="headline-item">
-      <div class="hl-tag">Legal Tech · Practice</div>
-      <div class="hl-headline">Litify Deploys AI Time Capture Across Microsoft 365, Zoom, Adobe</div>
-      <div class="hl-body"><strong>Litify</strong> and <strong>Billables AI</strong> announced LitifyAI Time Capture, which passively monitors attorney activity across Microsoft 365, Zoom, and Adobe to generate compliant time entries in real time without manual input. The tool targets a persistent economic leak: billable work that never gets recorded because attorneys reconstruct time hours after the fact.</div>
-      <div class="hl-why"><strong>Why it matters:</strong> Contingency PI firms don't bill hourly — but hybrid-fee WC defense shops and carrier counsel do. For defense-side practitioners, this class of tool represents meaningful margin recovery without adding headcount. For plaintiff firms, it benchmarks administrative efficiency as a competitive metric.</div>
-      <div class="hl-source">LawSites / Business Wire (May 21, 2026)</div>
+    <div class="tool-row">
+      <span class="tool-label">What it does</span>
+      <span>Passively captures attorney activity across email, documents, phone, and research platforms and automatically generates billable time entries — eliminating manual timekeeping entirely for attorneys who track time by the hour.</span>
     </div>
+    <div class="tool-row">
+      <span class="tool-label">Built for</span>
+      <span>High-volume litigation firms, WC defense practices, carrier in-house counsel, and PI firms billing on hourly or hybrid arrangements</span>
+    </div>
+    <div class="tool-row">
+      <span class="tool-label">WC/PI Use Case</span>
+      <span>For WC defense billing on time-and-expense arrangements, automatic capture recovers unbilled time on file reviews, email exchanges with adjusters, and research — estimated at 15–20% additional revenue per attorney. For managed-care arrangements, passive logs provide cost justification data to carrier clients.</span>
+    </div>
+    <div class="tool-row">
+      <span class="tool-label">Pricing</span>
+      <span>Contact Litify. Salesforce-native deployment — requires existing Litify subscription.</span>
+    </div>
+    <div class="tool-verdict">"If your WC defense practice still relies on attorneys manually entering time at end-of-day, you are leaving money in the file — this tool closes that gap automatically."</div>
+    <a href="https://www.litify.com" class="tool-link" target="_blank" rel="noopener">→ litify.com</a>
+  </div>
 
-    <div class="headline-item">
-      <div class="hl-tag">Practice · Strategy</div>
-      <div class="hl-headline">Above the Law: Plaintiffs' Lawyers Are Now Matching Defense Firm AI Capabilities</div>
-      <div class="hl-body">A detailed Above the Law analysis argues that AI has functionally neutralized historical defense advantages in PI litigation — access to capital, larger teams, and carrier-funded research budgets. <strong>Defense firms' hourly billing model</strong> makes pure time-saving tools economically less attractive, while their security and confidentiality concerns have slowed adoption relative to plaintiffs' shops.</div>
-      <div class="hl-why"><strong>Why it matters:</strong> The piece explicitly warns that if defense firms fail to keep pace, historical structural advantages become liabilities — echoing Cornwallis at Yorktown. For carrier-side WC defense counsel, this is the clearest statement yet that status quo is not defensible.</div>
-      <div class="hl-source">Above the Law (May 27, 2026)</div>
+  <hr class="thick-rule">
+
+  <div class="section-label">
+    <span class="section-label-text">◼ Illinois Spotlight</span>
+  </div>
+
+  <div class="illinois-block">
+    <div class="il-item">
+      <span class="il-tag reversed">Reversed &amp; Remanded</span>
+      <div class="case-cite">Subway v. IWCC · 2026 IL App (5th) 250429WC · April 13, 2026</div>
+      <p>Circuit court judgment reversed, commission decision set aside, and remanded. The double-reversal — circuit court and IWCC both reversed — signals a factual or legal error requiring full reconsideration on remand. Subsequent proceedings to watch.</p>
+    </div>
+    <div class="il-item">
+      <span class="il-tag affirmed">Affirmed</span>
+      <div class="case-cite">Concrete Structures of the Midwest v. IWCC · 2026 IL App (1st) 242493WC · March 6, 2026</div>
+      <p>First District affirmed. Commission's factual determinations sustained.</p>
+    </div>
+    <div class="il-item">
+      <span class="il-tag reversed">Reversed &amp; Remanded</span>
+      <div class="case-cite">Heiden v. Village of Westmont · 2026 IL App (3d) 250071 · March 5, 2026 · DuPage Co.</div>
+      <p>Third District reversed and remanded in a municipal employer WC Act case. Public entity practitioners in DuPage County should monitor subsequent proceedings.</p>
+    </div>
+    <div class="il-item">
+      <span class="il-tag alert">Regulatory — Active</span>
+      <div class="case-cite">Illinois HB 3773 — IDHR Draft Rules Pending Finalization</div>
+      <p>The IDHR has not issued final rules implementing HB 3773's AI notice and nondiscrimination requirements, effective January 1, 2026. The broad AI definition — any machine-based system that infers from inputs how to generate outputs — potentially covers carrier claim scoring systems. Four-year recordkeeping obligations are operative now. Plaintiff WC attorneys should be building discovery templates targeting carrier AI use.</p>
     </div>
   </div>
 
-  <div class="headlines-row2">
-    <div class="headline-item">
-      <div class="hl-tag">Document Management · Agentic</div>
-      <div class="hl-headline">iManage MCP Server Connects Claude AI to Governed Legal Knowledge Stores</div>
-      <div class="hl-body"><strong>iManage</strong> unveiled its next platform evolution at ConnectLive 2026, including an MCP (Model Context Protocol) server that allows Claude — and other AI tools — to access governed matter history, documents, and institutional precedent from iManage directly, with existing security and access controls intact. Firms no longer need bulk exports or custom integrations to use AI against their own knowledge stores.</div>
-      <div class="hl-why"><strong>Why it matters:</strong> For WC/PI shops with years of matter history in iManage, this unlocks AI analysis of your own precedent, settlement patterns, and medical record handling without the data governance risks of uploading files to external AI tools.</div>
-      <div class="hl-source">iManage / LawSites (May 22, 2026)</div>
-    </div>
+  <hr class="thick-rule">
 
-    <div class="headline-item">
-      <div class="hl-tag">Illinois · Legal Tech</div>
-      <div class="hl-headline">ISBA Partners with SimpleDocs for First State Bar AI Member Benefit</div>
-      <div class="hl-body">The <strong>Illinois State Bar Association</strong> announced a partnership with <strong>SimpleDocs</strong> to give ISBA members 30-day free access to <strong>SimpleAI</strong> — an AI contract review, redlining, drafting, and benchmarking tool built for Microsoft Word — followed by a 25% member discount. The ISBA AI Steering Committee vetted the platform specifically for data privacy, security standards, and a strict no-training-on-customer-data policy.</div>
-      <div class="hl-why"><strong>Why it matters:</strong> While primarily a transactional tool, this is a marker that state bar associations are now moving from AI ethics guidance to active AI enablement for members. Illinois WC practitioners should expect more tools to follow this pathway.</div>
-      <div class="hl-source">LawSites / ISBA (May 28, 2026)</div>
-    </div>
+  <div class="section-label">
+    <span class="section-label-text">◼ Editor's Dispatch — Quick Takes</span>
   </div>
 
-  <!-- ══════════════════════════════════════
-       TOOL SPOTLIGHT
-  ══════════════════════════════════════ -->
-  <div class="section-rule"><span class="section-label">◼ Tool Spotlight</span></div>
-
-  <div class="tool-spotlight-wrap">
-    <div class="tool-spotlight-header">
-      <span class="tool-section-label">Tool Spotlight</span>
-      <span class="tool-name-big">LitifyAI Time Capture + Billables AI</span>
-      <span class="tool-company">Litify × Billables AI</span>
-    </div>
-    <div class="tool-grid">
-      <div class="tool-field">
-        <div class="tool-field-label">What it does</div>
-        <div class="tool-field-val">Passively monitors attorney activity across Microsoft 365, Zoom, Adobe, and other tools. Automatically generates detailed, compliant time entries in real time — aligned to client billing requirements — without any manual input. Entries are surfaced in Litify for one-click review and approval.</div>
-      </div>
-      <div class="tool-field">
-        <div class="tool-field-label">Built for</div>
-        <div class="tool-field-val">Law firms and legal departments using the Litify platform. Most relevant to <strong>defense-side WC and PI firms</strong>, carrier counsel, and hybrid-fee shops where billable hour recovery is a direct revenue driver. Contingency-only plaintiff shops benefit less from time capture but may find the administrative integration valuable for reporting.</div>
-      </div>
-      <div class="tool-field">
-        <div class="tool-field-label">WC/PI use case</div>
-        <div class="tool-field-val">A WC defense associate spends 40 minutes reviewing IME reports, exchanging emails with the carrier adjuster, and attending a Zoom status call — then gets pulled into deposition prep. Under traditional timekeeping, the first block of work gets underrecorded or lost entirely. LitifyAI captures the IME review, email thread, and call as discrete entries, surfaces them before end of day, and drafts narratives aligned to that carrier's billing guidelines.</div>
-      </div>
-      <div class="tool-field">
-        <div class="tool-field-label">Pricing</div>
-        <div class="tool-field-val">Available as a native capability within the Litify platform. Pricing not publicly disclosed; part of the Litify enterprise subscription. Firms not on Litify would need to migrate or evaluate Billables AI as a standalone integration with their current case management system.</div>
-      </div>
-      <div class="tool-field tool-verdict">
-        <strong>Verdict →</strong> An operationally smart pairing that solves a real, if unsexy, problem — the primary beneficiaries are defense shops and hybrid-fee practices where every unrecorded hour is a direct margin hit; plaintiff firms should evaluate whether the Litify platform economics make sense for their model.
-      </div>
-      <div class="tool-field">
-        <div class="tool-field-label">Learn More</div>
-        <div class="tool-field-val tool-link"><a href="https://www.litify.com">litify.com</a> &nbsp;|&nbsp; <a href="https://www.billablesai.com">billablesai.com</a></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       AGENTIC CORNER
-  ══════════════════════════════════════ -->
-  <div class="section-rule"><span class="section-label">◼ The Agentic Corner</span></div>
-
-  <div class="two-col">
-    <div class="two-col-left">
-      <div class="col-head">iManage's MCP Architecture: The Model for Institutional-Knowledge AI</div>
-      <div class="col-body">
-        <p>The most significant agentic legal infrastructure announcement of the past two weeks isn't from a legal AI startup — it's from a 30-year-old document management company. <strong>iManage's MCP Server</strong>, announced at ConnectLive 2026, establishes a permissioned, auditable bridge between AI models and a firm's entire governed knowledge base: matter history, work product, precedent, deal insights, and litigation strategy accumulated over decades.</p>
-        <p>The architecture matters because it solves what has been the central data governance problem in legal AI deployment. Firms with sensitive WC defense files, settlement data, and carrier confidentiality obligations couldn't simply upload that material to external AI tools without risk. An MCP layer that respects existing security permissions and ethical walls changes the calculation entirely.</p>
-        <p>For agentic workflows specifically, this means a legal AI agent operating within iManage can be instructed to: (1) surface all prior settlements with a specific carrier on lumbar disc injuries at L4-L5; (2) identify the arbitrators or mediators used; (3) flag the range of outcomes; and (4) draft a settlement valuation memo calibrated to that historical data — all without ever moving a document outside the firm's governed environment.</p>
-        <p>iManage is available through <strong>Anthropic's Claude partner ecosystem</strong>, meaning Claude models can access this governed knowledge directly. For firms already on iManage with WC or mass tort case volume, this is a near-term deployment opportunity rather than a speculative future capability.</p>
-      </div>
-    </div>
-    <div>
-      <div class="col-head">The Carrier AI Playbook: What Adjusters Are Running Against Your Clients' Claims</div>
-      <div class="col-body">
-        <p><strong>MedRisk's 2026 Industry Trends Report</strong> confirms what plaintiff WC attorneys have suspected: AI is now <em>operational infrastructure</em> on the carrier side, not experimental tooling. The report documents AI embedded across intake, triage, care coordination, and return-to-work management — with the explicit goal of identifying risks earlier and reducing claim complexity before disputes arise.</p>
-        <p>Translate that to litigation posture: by the time a contested WC claim reaches an attorney, carrier-side AI has already run the file through predictive analytics, flagged inconsistency signals, and generated a recommended disposition range. The adjuster sitting across from your client's attorney isn't exercising unguided judgment — they're working within parameters the algorithm set.</p>
-        <p>For practitioners, this creates a concrete discovery imperative: <strong>the AI-generated risk scores, disposition recommendations, and predictive analytics run on your client's file are potentially discoverable</strong>. If you haven't started asking for them, you're negotiating blind against a system your adversary can see.</p>
-        <p>The same dynamic operates in PI cases through systems like <strong>Colossus</strong> and <strong>ClaimIQ</strong>. Attorneys who understand how these systems weight injury type, treatment pattern, and claim history can construct the medical record to speak directly to the algorithm's inputs — a skill that is rapidly becoming table stakes for plaintiff-side practitioners.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       CASE LAW & REGULATORY RADAR
-  ══════════════════════════════════════ -->
-  <div class="section-rule"><span class="section-label">◼ Case Law & Regulatory Radar</span></div>
-
-  <div class="three-col">
-    <div>
-      <div class="col-head">Florida: Citation Certification Takes Effect June 15</div>
-      <div class="col-body">
-        <p>The <strong>Florida Supreme Court's Rule 2.515(d)(2) amendment</strong> is now the most consequential state-court AI filing rule in the country. Unlike individual judge standing orders or circuit-level administrative orders (which Florida was trying to rationalize into a uniform standard), this amendment applies statewide, across all courts, and carries express sanction authority.</p>
-        <p>The certification required: that "the legal authorities identified exist and are accurately cited." This language sweeps in not just cases that don't exist but cases that exist but don't stand for the cited proposition — a subtler hallucination that verification workflows must catch.</p>
-        <p>The court issued the rule on its own motion without public comment, but invited comment by <strong>August 11, 2026</strong>. Florida WC and PI practitioners should: (1) implement a mandatory citation verification step in every filing workflow now, and (2) document that verification in file notes as protection against any later sanction challenge.</p>
-        <p>Florida's rule is structurally similar to what the <strong>Sixth Circuit</strong> imposed by judicial sanction earlier this year (which cost one firm $30,000). The difference: Florida has now codified the obligation for everyone, in every court, with no opt-out.</p>
-      </div>
-    </div>
-    <div>
-      <div class="col-head">Federal & Multi-State: The AI Privilege Problem Surfaces in Civil Litigation</div>
-      <div class="col-body">
-        <p>A SDNY decision, <strong><em>United States v. Heppner</em></strong>, is drawing attention in Canadian and U.S. plaintiff PI circles for ruling that communications with a consumer AI platform are not protected by attorney-client privilege or work product doctrine. The court's reasoning: the communications were not confidential (as required for privilege) because they were effectively made to a third party.</p>
-        <p>The implications for WC and PI practitioners who use consumer AI tools (ChatGPT, Gemini, consumer-tier Claude) to develop case strategy or draft privileged communications are significant. Work developed through uncontrolled consumer AI platforms may be discoverable by opposing counsel. Enterprise-grade legal AI tools with strict data isolation policies are not just a feature preference — they may be a privilege protection necessity.</p>
-        <p>The <strong>Illinois State Bar Association</strong> flagged this exact concern in a May 26 article ("What's Said to AI May Not Stay in AI"), noting that attorneys must evaluate whether third-party AI tools risk exposing confidential client information — and obtain informed client consent when that risk is present. ISBA's selection of SimpleDocs specifically cited its strict no-training-on-customer-data policy as a key criterion.</p>
-      </div>
-    </div>
-    <div>
-      <div class="col-head">Regulatory Watch: AI Claims Algorithms & Discovery Exposure</div>
-      <div class="col-body">
-        <p>No new federal agency guidance this week on AI in insurance claims. But the <strong>MedRisk trend report</strong> and the concurrent <strong>Insurance Journal</strong> survey of carrier AI adoption converge on a finding with regulatory implications: AI is now making or shaping claims disposition decisions at approximately <strong>40% of WC carriers</strong> in some states, with intake automation reducing average claim processing time from 10 days to 36 hours.</p>
-        <p>The regulatory gap: most state insurance codes do not require carriers to disclose when an AI system is making or influencing a claim denial, delay, or settlement offer. The <strong>National Association of Insurance Commissioners (NAIC)</strong> has published AI model guidelines, but state adoption remains uneven.</p>
-        <p>For plaintiff-side WC and PI attorneys, this creates a developing litigation opportunity: if a carrier's AI system generates a valuation range that doesn't account for individualized facts — particularly for older, higher-severity claimants with comorbidities (the segment MedRisk identifies as underserved by algorithmic processing) — that disparity may support both damages arguments and potential bad-faith theories in jurisdictions that recognize them.</p>
-        <p><em>Monitoring:</em> NAIC model AI bulletin adoption; state-level carrier AI transparency bills in CA, CO, and IL.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       ILLINOIS SPOTLIGHT
-  ══════════════════════════════════════ -->
-  <div class="section-rule"><span class="section-label">◼ Illinois Spotlight</span></div>
-
-  <div class="illinois-wrap">
-    <div class="illinois-header">
-      <div class="illinois-flag">🏛</div>
-      <div class="illinois-title-block">
-        <div class="illinois-over">Illinois Workers' Compensation & Legal AI</div>
-        <div class="illinois-title">May 2026 Illinois Decisions & ISBA AI Developments</div>
-      </div>
-    </div>
-
-    <div class="il-grid">
-      <div class="il-item">
-        <div class="il-case">Subway v. Illinois Workers' Compensation Comm'n<br>2026 IL App (5th) 250429WC (April 13, 2026) · Montgomery Co.</div>
-        <span class="il-outcome reversed">Reversed & Remanded</span>
-        <div class="il-body">The Fifth District reversed the circuit court judgment and set aside the Commission decision, remanding the matter. This decision — the most recent significant IWCC appellate opinion — warrants close review by practitioners handling food service and retail employer WC claims in downstate Illinois, where the Fifth District's approach to Commission deference continues to evolve. Practitioners in Montgomery County and adjacent downstate circuits should monitor the remand proceedings.</div>
-      </div>
-
-      <div class="il-item">
-        <div class="il-case">Concrete Structures of the Midwest v. IWCC<br>2026 IL App (1st) 242493WC (March 6, 2026) · Cook Co.</div>
-        <span class="il-outcome affirmed">Affirmed</span>
-        <div class="il-body">The First District affirmed the Commission's decision in a construction-sector WC matter. No reversal, no remand — but the affirmance in a Cook County construction case is worth filing as precedent for practitioners defending or prosecuting claims involving concrete/masonry trades, where causation and permanency disputes are common and First District deference patterns matter.</div>
-      </div>
-
-      <div class="il-item">
-        <div class="il-case">Heiden v. Village of Westmont<br>2026 IL App (3d) 250071 (March 5, 2026) · DuPage Co.</div>
-        <span class="il-outcome reversed">Reversed & Remanded</span>
-        <div class="il-body">The Third District reversed and remanded in this DuPage County matter involving a municipal employer. Municipal and public employer WC claims present distinct procedural and benefit calculation issues in Illinois — particularly around pension offset, duty disability benefits, and retirement status. The Westmont reversal is a signal that Commission decisions in this sector continue to face meaningful appellate scrutiny in the Third District.</div>
-      </div>
-
-      <div class="il-item">
-        <div class="il-case">ISBA × SimpleDocs Partnership + AI Privilege Warning<br>Illinois State Bar Association (May 28, 2026)</div>
-        <span class="il-outcome" style="background:#4a3e6b;">Practice Development</span>
-        <div class="il-body">The ISBA's roll-out of SimpleAI as a member benefit — combined with the bar's May 26 advisory on AI confidentiality ("What's Said to AI May Not Stay in AI") — represents the ISBA simultaneously expanding AI access and warning about AI risk. Illinois practitioners should read both items together: the ISBA has vetted SimpleDocs specifically because it does not train on client data. Any AI tool that does train on input data carries the privilege exposure the ISBA article flags, and Illinois lawyers using those tools to develop WC or PI strategy should review their engagement agreements for AI disclosure language.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       MEDICAL & EXPERT INTELLIGENCE
-  ══════════════════════════════════════ -->
-  <div class="section-rule"><span class="section-label">◼ Medical & Expert Intelligence</span></div>
-
-  <div class="two-col">
-    <div class="two-col-left">
-      <div class="col-head">Carrier AI Is Reshaping the IME and Treatment Approval Landscape</div>
-      <div class="col-body">
-        <p>The <strong>MedRisk 2026 Industry Outlook</strong> documents a specific AI deployment pattern that plaintiff WC attorneys need to understand as an evidentiary matter: AI systems are now analyzing opioid prescribing in the first weeks after injury and flagging those patterns as predictors of disability duration and claim cost — before an IME is even ordered.</p>
-        <p>New research the report highlights is striking: <strong>opioid use before spine surgery cuts return-to-work odds in half</strong>. Carriers are using this clinical evidence — correctly — to shape early treatment pathways. The risk for claimants: AI-driven early intervention that steers patients away from opioids toward physical therapy may serve both clinical and claim-cost objectives simultaneously, but may also shortchange workers with legitimate acute pain management needs.</p>
-        <p>For attorneys representing injured workers: the AI's early treatment recommendations and the clinical evidence underlying them are part of the medical record. If a carrier's AI-directed treatment pathway produced a worse outcome than the treating physician recommended — or delayed access to pain management that slowed recovery — that divergence is potentially material to a causation and permanency argument.</p>
-        <p>A separate concern: the <strong>WCRI</strong> has published analysis noting that injured workers frequently seek attorneys not because they anticipate being fired, but because they believe their employer or insurer questions the legitimacy of their injury. AI-generated early fraud flags — even when ultimately unfounded — may be accelerating exactly that perception, driving attorney involvement earlier in the claims lifecycle than would otherwise occur.</p>
-      </div>
-    </div>
-    <div>
-      <div class="col-head">AI-Generated Medical Notes: The Documentation Problem Entering Litigation</div>
-      <div class="col-body">
-        <p>A trend identified in the <em>Lawyer Monthly</em> personal injury trends analysis deserves a dedicated flag for WC and PI practitioners: <strong>hospitals and clinics are increasingly using AI to draft patient notes, summarize appointments, and organize records</strong> faster. The efficiency gain is real. The litigation problem is emerging.</p>
-        <p>AI-generated clinical notes introduce small wording inconsistencies — standardized phrasing that doesn't reflect the treating physician's actual observation, symptom descriptions generated from templates rather than direct examination, or summary language that elides clinically significant nuance. Defense teams in PI and WC cases are already using these inconsistencies to argue symptom exaggeration or poor documentation at the outset of treatment.</p>
-        <p>For plaintiff attorneys, the response is: (1) request the treating physician's underlying dictation or contemporaneous notes before the AI-assisted final version was generated, where available; (2) depose the treating physician specifically on whether the AI-assisted record accurately reflects their clinical findings; and (3) consider retaining a medical records expert who can testify on AI documentation systems and their artifacts.</p>
-        <p>For defense attorneys: the same dynamic works in reverse. AI note inconsistencies that suggest exaggeration need to be evaluated against the baseline: if the inconsistency is a documentation artifact rather than a clinical lie, your argument may not survive cross-examination of the treating physician or a medical records expert retained by plaintiff.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       RESOURCE OF THE DAY
-  ══════════════════════════════════════ -->
-  <div class="section-rule"><span class="section-label">◼ Resource of the Day</span></div>
-
-  <div class="resource-wrap">
-    <div class="resource-icon">📊</div>
-    <div class="resource-content">
-      <div class="resource-label">Resource of the Day · Industry Report</div>
-      <div class="resource-title">MedRisk 2026 Industry Outlook: AI, Care Pathways & Claim Complexity in Workers' Compensation</div>
-      <div class="resource-desc">
-        MedRisk's annual Industry Outlook is the most practitioner-relevant research publication in the WC claims ecosystem — not because it's written for attorneys, but because it documents exactly how the carrier and managed care side is using AI to shape claim trajectories before legal disputes arise. The 2026 edition covers AI's move from pilot to operational infrastructure, the specific clinical research carriers are using to drive treatment pathway decisions (including the opioid-RTW correlation), the aging claimant population's effect on severity trends, and the risk that AI adoption without workflow redesign creates more friction rather than less. Required reading for any plaintiff WC attorney who wants to understand the algorithmic environment their clients are navigating before a claim is ever contested.
-      </div>
-      <a class="resource-link" href="https://www.medrisknet.com/2026-trend-report/">medrisknet.com/2026-trend-report/</a>
-    </div>
-  </div>
-
-  <!-- ══════════════════════════════════════
-       EDITOR'S DISPATCH
-  ══════════════════════════════════════ -->
-  <div class="section-rule"><span class="section-label">◼ Editor's Dispatch — Quick Takes</span></div>
-
-  <div class="dispatch-grid">
+  <div class="dispatch-block">
     <div class="dispatch-item">
-      <div class="dispatch-num">01</div>
-      <div class="dispatch-head">The Florida Rule Is a Preview of the National Standard</div>
-      <div class="dispatch-body">
-        Florida's citation accuracy certification isn't a Florida-only development — it's the logical conclusion of what every court that has imposed AI hallucination sanctions has been building toward, now codified as a statewide rule applicable to all practitioners without the need for a triggering sanction event. Within 18 months, expect at least a dozen more state supreme courts to follow. WC and PI attorneys should treat Florida's June 15 effective date as a countdown to their own jurisdiction's version. The workflow change required is simple: run every citation through a verification step (Westlaw, Lexis, or a dedicated tool like Casetext or Ross) before filing. The failure mode is not complex — it is an attorney who trusted AI output and didn't check.
-      </div>
+      <div class="dispatch-hed">Florida's June 15 Rule Is the National Preview</div>
+      Every state bar is watching Florida. Rule 2.515(d)(2) is the first citation verification mandate with a hard effective date in a major PI market. If enforcement activity follows — and it will — the template spreads. WC/PI attorneys in every state should be building their AI citation verification protocols now, not when their state adopts a version of the Florida rule.
     </div>
     <div class="dispatch-item">
-      <div class="dispatch-num">02</div>
-      <div class="dispatch-head">Build vs. Buy Is the Wrong Frame for Mid-Market WC/PI Firms</div>
-      <div class="dispatch-body">
-        Kirkland's $500M announcement will generate a lot of noise about whether law firms should "build their own AI." For a firm doing $10.6B in revenue, that's a coherent strategic option. For a WC and PI shop doing $5M–$50M, it is not. The relevant question isn't build vs. buy — it's which vendor's AI is trained on data most relevant to your practice, and whether you can configure it without becoming dependent on that vendor's roadmap. The firms that will win in the WC/PI space over the next five years are not the ones that built proprietary AI. They are the ones that figured out how to make off-the-shelf tools work against carrier AI systems that have been in production for years.
-      </div>
+      <div class="dispatch-hed">Build vs. Buy Is the Wrong Frame for Mid-Market WC/PI</div>
+      Kirkland is building. Most WC defense firms should be buying — but buying strategically, with a clear view of which commercial AI stack gives them the closest equivalent of institutional-knowledge AI. The iManage + Claude MCP integration is the closest commercial approximation of what Kirkland is building for itself. WC defense practices on iManage should be piloting that integration now.
     </div>
     <div class="dispatch-item">
-      <div class="dispatch-num">03</div>
-      <div class="dispatch-head">The Aging Claimant Population Is an AI Failure Mode, Not Just a Claims Trend</div>
-      <div class="dispatch-body">
-        MedRisk's finding that injured workers aged 50+ now represent a larger share of WC claimants — and that comorbidities complicate recovery trajectories — is being processed by the industry as a claim complexity and cost problem. But it's also a specific AI failure mode that plaintiff attorneys should understand: algorithmic claim valuation systems are trained on historical data in which the average claimant was younger, had fewer comorbidities, and recovered on a faster timeline. When those systems apply standard valuation ranges to a 58-year-old diabetic with a lumbar injury, the output is structurally undervalued. The counter-argument is not "my client is unique" — it is a quantified demonstration that the carrier's algorithm cannot accurately price this claim because the training population is not comparable. That is a data argument that medical and actuarial experts can make.
-      </div>
+      <div class="dispatch-hed">The Aging Claimant Population Is an AI Valuation Failure Mode</div>
+      AI settlement valuation tools trained on historical claims data systematically underweight the costs associated with aging workforce claims — longer recovery timelines, higher comorbidity rates, extended TTD periods, and Medicare Set-Aside complexity. Plaintiff WC attorneys representing workers over 55 should be particularly skeptical of AI-generated settlement valuations and should be building the aging-claimant premium case into every demand.
     </div>
   </div>
+
+  <footer class="paper-footer">
+    <div>
+      <strong>Legal Intel</strong> &nbsp;·&nbsp; Vol. I, No. 4 &nbsp;·&nbsp; May 31, 2026<br>
+      unclejim7.github.io/legal-intel
+    </div>
+    <div class="footer-legal">
+      All editions AI-generated. Not legal advice. Verify before acting professionally.<br>
+      © 2026 Legal Intel. Est. May 2026.
+    </div>
+  </footer>
 
 </main>
 
-<footer class="paper-footer">
-  <span>Legal Intel · Est. 2025</span>
-  <span>AI-Generated · Not Legal Advice · Verify Before Acting Professionally</span>
-  <span>unclejim7.github.io/legal-intel</span>
-</footer>
+<script>
+(function() {
+  const els = document.querySelectorAll('.headline-item, .caselaw-item, .il-item, .dispatch-item, .tool-card, .resource-box');
+  els.forEach(el => el.classList.add('reveal-ready'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  els.forEach(el => io.observe(el));
+})();
+</script>
 
 </body>
 </html>
